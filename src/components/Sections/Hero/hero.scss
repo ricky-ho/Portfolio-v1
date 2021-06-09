@@ -1,0 +1,58 @@
+#hero {
+  height: calc(100vh - var(--header-height));
+  max-height: 1050px;
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  h1 {
+    span {
+      display: block;
+    }
+
+    /* Targets the text "Hi, my name is" */
+    span:nth-child(1) {
+      font-family: "Open sans", sans-serif;
+      font-size: var(--fontsize-header);
+      color: var(--gray);
+    }
+
+    /* Targets the text "Ricky Ho" */
+    span:nth-child(2) {
+      color: var(--light-blue);
+      font-size: var(--fontsize-hero-header);
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
+  p {
+    font-size: var(--fontsize-header);
+    font-family: "Open Sans", sans-serif;
+    margin-top: 1rem;
+    color: var(--gray);
+  }
+
+  .cta-btn {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 5px;
+    margin-top: 2rem;
+    font-size: var(--fontsize-subheader);
+    border: 2px solid var(--rust);
+    border-radius: 5px;
+    color: var(--white);
+    background: var(--rust);
+
+    &:hover {
+      background: var(--white);
+      color: var(--rust);
+    }
+  }
+}
