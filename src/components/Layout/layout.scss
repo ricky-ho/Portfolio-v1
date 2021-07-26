@@ -5,19 +5,23 @@
 }
 
 :root {
-  --light-blue: #398ddb;
-  --gold: #db9d39;
-  --rust: #db4c39;
-  --white: #fff;
-  --gray: #9c9c9c;
-  --black: #000;
-  --fontsize-hero-header: 9rem;
-  --fontsize-header: 2.25rem;
-  --fontsize-subheader: 2rem;
-  --fontsize-navlink: 1rem;
-  --header-font: "Roboto";
-  --body-font: "Open Sans";
-  --header-height: 75px;
+  --gold: hsl(37, 69%, 54%);
+  --rust: hsl(7, 69%, 54%);
+  --primary: hsl(223, 100%, 60%);
+  --primary-light: hsl(209, 96%, 79%);
+  --primary-lighter: hsl(208, 100%, 94%);
+  --secondary: hsl(209, 69%, 54%);
+  --gray: hsl(0, 0%, 51%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --font-headers: "Montserrat", Helvetica, sans-serif;
+  --font-body: "Open Sans", Arial, sans-serif;
+  --fontsize-s: 0.85rem;
+  --fontsize-default: 1rem;
+  --fontsize-m: 1.25rem;
+  --fontsize-l: 1.5rem;
+  --fontsize-xl: 2rem;
+  --header-height: 70px;
 }
 
 #root {
@@ -25,7 +29,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: var(--white);
+  background: white;
 }
 
 main {
@@ -33,6 +37,36 @@ main {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  margin-top: var(--header-height);
+}
+
+section {
+  font-family: var(--font-body);
+  scroll-margin-top: var(--header-height);
+  padding: 35px;
+  padding-bottom: 100px;
+
+  .section__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+
+    div {
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+    }
+  }
+
+  h2 {
+    font-size: var(--fontsize-l);
+    font-family: var(--font-headers);
+    color: var(--gray);
+    text-align: left;
+    letter-spacing: 1px;
+    padding-right: 20px;
+  }
 }
 
 .container {

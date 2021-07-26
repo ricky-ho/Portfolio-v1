@@ -1,23 +1,57 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import "./header.scss"
 
-const Header = () => (
-  <header className="header">
-    <div className="header__inner">
-      <div>
-        <a href="/">Logo </a>
-      </div>
-      <nav className="nav">
-        <Link className="navlink" to="/#projects">
+const Header = () => {
+  const closeMenu = () => {
+    const input = document.querySelector(".toggler")
+    if (input.checked) {
+      input.checked = false
+    }
+  }
+
+  return (
+    <header className="header">
+      <div className="header__inner">
+        <div>
+          <a href="/">Logo </a>
+        </div>
+        <div className="menu-wrap">
+          <input type="checkbox" className="toggler" aria-label="Toggle Menu" />
+          <div className="hamburger-icon">
+            <div></div>
+          </div>
+          <nav className="menu">
+            <div>
+              <ul>
+                <li>
+                  <Link to="#projects" onClick={() => closeMenu()}>
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#about" onClick={() => closeMenu()}>
+                    About Me
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#contact" onClick={() => closeMenu()}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        {/* <nav className="nav">
+        <Link className="navlink" to="#projects">
           Projects
         </Link>
-        <Link className="navlink" to="/#about">
+        <Link className="navlink" to="#about">
           About
         </Link>
-        <Link className="navlink" to="/#contact">
+        <Link className="navlink" to="#contact">
           Contact
         </Link>
         <a
@@ -28,17 +62,10 @@ const Header = () => (
         >
           Resume
         </a>
-      </nav>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+      </nav> */}
+      </div>
+    </header>
+  )
 }
 
 export default Header
