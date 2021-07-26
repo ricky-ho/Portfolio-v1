@@ -1,0 +1,20 @@
+.skills__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+  }
+
+  li {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+}
