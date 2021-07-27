@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
 }
 
 :root {
@@ -12,6 +17,7 @@
   --primary-lighter: hsl(208, 100%, 94%);
   --secondary: hsl(209, 69%, 54%);
   --gray: hsl(0, 0%, 51%);
+  --lightgray: hsl(0, 0%, 69%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
@@ -67,6 +73,12 @@ section {
     letter-spacing: 1px;
     padding-right: 20px;
   }
+}
+
+header,
+footer {
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .container {

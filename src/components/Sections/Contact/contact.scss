@@ -1,31 +1,102 @@
-#contact {
-  .contact__inner {
-    display: flex;
-    flex-direction: column;
-    padding: 100px 50px;
-  }
+.contact__inner {
+  display: flex;
+  flex-direction: column;
 
   h2 {
     text-align: center;
-    font-family: var(--header-font), sans-serif;
   }
 
   p {
     text-align: center;
     font-family: var(--body-font), sans-serif;
   }
+}
 
-  .contact-form {
+.email-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem;
+  border: 3px solid var(--primary);
+  background-color: inherit;
+
+  div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
+
+  p {
+    text-align: left;
+    color: var(--gray);
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-size: var(--fontsize-m);
+
+    &:hover,
+    &:focus {
+      color: var(--rust);
+    }
+  }
+}
+
+.io-mail {
+  color: var(--primary);
+
+  :nth-child(3),
+  :nth-child(4) {
+    color: hsl(123, 70%, 39%);
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   input,
   textarea {
-    width: 50%;
-    min-width: 400px;
-    padding: 5px 10px;
-    font-family: var(--body-font), sans-serif;
+    --border-color: var(--lightgray);
+
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 15px;
+    font-family: var(--body-font);
+    font-size: var(--fontsize-default);
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid var(--border-color);
+    color: var(--black);
+    background: inherit;
+
+    &:focus {
+      --border-color: var(--primary);
+    }
+  }
+
+  button {
+    align-self: flex-start;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: var(--fontsize-l);
+    padding: 0.5rem 2rem;
+    background-color: var(--primary);
+    color: var(--white);
+
+    &:hover,
+    &:focus {
+      background: var(--rust);
+      box-shadow: 0 5px 15px var(--lightgray);
+    }
   }
 }
