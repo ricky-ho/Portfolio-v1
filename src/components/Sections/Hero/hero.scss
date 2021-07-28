@@ -52,6 +52,9 @@
   margin: 25px 0;
 
   a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 30px;
     text-decoration: none;
     transition: all 0.2s ease;

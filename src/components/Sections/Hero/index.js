@@ -38,7 +38,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             title="https://github.com/ricky-ho"
           >
-            <FaGithub size={20} />
+            <FaGithub size={15} />
           </a>
           <a
             href="https://www.linkedin.com/in/ricky-ho-01/"
@@ -46,7 +46,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             title="https://www.linkedin.com/in/ricky-ho-01"
           >
-            <FaLinkedin size={20} />
+            <FaLinkedin size={15} />
           </a>
           <a
             href="mailto:horicky.cs@gmail.com"
@@ -54,7 +54,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             title="mailto:horicky.cs@gmail.com"
           >
-            <FiMail size={20} />
+            <FiMail size={15} />
           </a>
         </div>
       </div>
