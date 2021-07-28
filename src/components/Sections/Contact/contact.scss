@@ -14,12 +14,13 @@
 
 .email-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   margin-bottom: 2.5rem;
   border-radius: 1rem;
-  border: 3px solid var(--primary);
+  border: 2px solid var(--secondary);
   background-color: inherit;
 
   div {
@@ -30,16 +31,15 @@
   }
 
   p {
-    text-align: left;
+    text-align: center;
     color: var(--gray);
     width: 100%;
-    margin-bottom: 0.5rem;
   }
 
   a {
+    text-align: center;
     letter-spacing: 1px;
     color: var(--primary);
-    font-size: var(--fontsize-m);
 
     &:hover,
     &:focus {
@@ -49,6 +49,7 @@
 }
 
 .io-mail {
+  width: 100%;
   color: var(--primary);
 
   :nth-child(3),
@@ -70,7 +71,6 @@
     padding: 0.75rem 1rem;
     margin-bottom: 15px;
     font-family: var(--body-font);
-    font-size: var(--fontsize-default);
     border-radius: 10px;
     outline: none;
     border: 2px solid var(--border-color);
