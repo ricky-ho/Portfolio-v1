@@ -27,55 +27,55 @@ const Skills = () => {
         </div>
         <ul>
           <li>
-            HTML
+            <p>HTML</p>
             <HtmlIcon className="skills-icon" />
           </li>
           <li>
-            CSS
+            <p>CSS</p>
             <CssIcon className="skills-icon" />
           </li>
           <li>
-            SASS
+            <p>SASS</p>
             <SassIcon className="skills-icon" />
           </li>
           <li>
-            JavaScript
+            <p>JavaScript</p>
             <JavascriptIcon className="skills-icon" />
           </li>
           <li>
-            React
+            <p>React</p>
             <ReactIcon className="skills-icon" />
           </li>
           <li>
-            Gatsby
+            <p>Gatsby</p>
             <GatsbyIcon className="skills-icon" />
           </li>
           <li>
-            Node.js
+            <p>Node.js</p>
             <NodeIcon className="skills-icon" />
           </li>
           <li>
-            MongoDB
+            <p>MongoDB</p>
             <MongodbIcon className="skills-icon" />
           </li>
           <li>
-            Git
+            <p>Git</p>
             <GitIcon className="skills-icon" />
           </li>
           <li>
-            Heroku
+            <p>Heroku</p>
             <HerokuIcon className="skills-icon" />
           </li>
           <li>
-            Netlify
+            <p>Netlify</p>
             <NetlifyIcon className="skills-icon" />
           </li>
           <li>
-            Figma
+            <p>Figma</p>
             <FigmaIcon className="skills-icon" />
           </li>
           <li>
-            Python
+            <p>Python</p>
             <PythonIcon className="skills-icon" />
           </li>
         </ul>

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { AiFillGithub } from "react-icons/ai"
+import { FaGithub } from "react-icons/fa"
 import { BiLinkExternal } from "react-icons/bi"
 
 import "./projects.scss"
@@ -16,19 +16,20 @@ const Projects = () => {
         <div className="project-card">
           <div className="project-image"></div>
           <div className="card__inner">
-            <h3>Covid-19 Statistics</h3>
+            <div className="card__header">
+              <h3>Covid-19 Statistics</h3>
+            </div>
             <p>
               View the latest Covid-19 statistics including number of cases,
-              deaths, and vaccinations globally or by country as reported by{" "}
-              <a href="https://ourworldindata.org/covid">Our World in Data</a>.
-              Users can search for specific countries and can sort the results
-              by specific parameters (e.g alphabetical, number of cases, etc).
+              deaths, and vaccinations globally or by country as reported by Our
+              World in Data. Users can search for specific countries and can
+              sort the results by specific parameters (e.g alphabetical, number
+              of cases, etc).
             </p>
             <ul>
               <li>React</li>
-              <li>Recharts</li>
-              <li>Javascript</li>
-              <li>HTML</li>
+              <li>Recharts.js</li>
+              <li>JavaScript</li>
               <li>SCSS</li>
               <li>Netlify</li>
             </ul>
@@ -38,14 +39,14 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillGithub size={30} />
+                <FaGithub size={25} />
               </a>
               <a
                 href="https://statistics-covid19.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={30} />
+                <BiLinkExternal size={25} />
               </a>
             </div>
           </div>
@@ -53,23 +54,23 @@ const Projects = () => {
         <div className="project-card">
           <div className="project-image"></div>
           <div className="card__inner">
-            <h3>Stocks Search</h3>
+            <div className="card__header">
+              <h3>Stocks Search</h3>
+            </div>
             <p>
               A stock market inspired, mobile-responsive, single-page
               application that allows users to search for the latest market data
               on any public stock listed on the Investors Exchange (IEX) with an
               interactive intraday price movement chart created with
-              ApexCharts.js. All market data is retrieved from{" "}
-              <a href="https://iexcloud.io">IEX Cloud</a> API using asynchronous
-              fetch requests.
+              ApexCharts.js. All market data is retrieved from IEX Cloud API.
             </p>
             <ul>
               <li>React</li>
               <li>ApexCharts.js</li>
-              <li>Javascript</li>
-              <li>HTML</li>
+              <li>JavaScript</li>
               <li>CSS</li>
               <li>Netlify</li>
+              <li>IEXCloud API</li>
             </ul>
             <div className="project-links">
               <a
@@ -77,14 +78,14 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillGithub size={30} />
+                <FaGithub size={25} />
               </a>
               <a
                 href="https://reactstocksearch.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={30} />
+                <BiLinkExternal size={25} />
               </a>
             </div>
           </div>
@@ -92,18 +93,18 @@ const Projects = () => {
         <div className="project-card">
           <div className="project-image"></div>
           <div className="card__inner">
-            <h3>Omomo-Clone</h3>
+            <div className="card__header">
+              <h3>Omomo-Clone</h3>
+            </div>
             <p>
               A front-end, mobile-responsive, ecommerce web application inspired
-              by <a href="https://omomoteashoppe.com">Omomo Tea Shoppe</a> that
-              allows users to browse and shop online for boba milk tea. Users
-              will be able to modify drink add-ons/options and add or remove
-              items from their shopping cart.
+              by Omomo Tea Shoppe that allows users to browse and shop online
+              for boba milk tea. Users will be able to modify drink
+              add-ons/options and add or remove items from their shopping cart.
             </p>
             <ul>
               <li>React</li>
-              <li>Javascript</li>
-              <li>HTML</li>
+              <li>JavaScript</li>
               <li>CSS</li>
               <li>Netlify</li>
             </ul>
@@ -113,14 +114,14 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillGithub size={30} />
+                <FaGithub size={25} />
               </a>
               <a
                 href="https://omomoteashoppeclone.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={30} />
+                <BiLinkExternal size={25} />
               </a>
             </div>
           </div>
