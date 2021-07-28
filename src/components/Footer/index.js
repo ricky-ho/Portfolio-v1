@@ -9,9 +9,6 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer__inner container">
-        <p>
-          &copy; 2021 <span>Ricky Ho</span>
-        </p>
         <a href="#hero" className="back-to-top" title="Back to Top">
           <BiChevronUpCircle className="bi-chevron" size={40} />
         </a>
@@ -42,6 +39,9 @@ const Footer = () => {
             <FiMail size={15} />
           </a>
         </div>
+        <p>
+          &copy; 2021 <span>Ricky Ho</span>
+        </p>
       </div>
     </footer>
   )
