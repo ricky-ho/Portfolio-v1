@@ -1,11 +1,16 @@
 import * as React from "react"
+import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
 import { FiPhone } from "react-icons/fi"
 
 import "./header.scss"
 
+const MOBILE_THRESHOLD_WIDTH = 700
+
 const Header = () => {
+  const width = useScreenWidth()
+
   return (
     <header className="header">
       <div className="header__inner">
@@ -13,29 +18,37 @@ const Header = () => {
           <a href="/">Logo </a>
         </div>
         <div className="menu-wrap">
-          <MobileNavMenu />
+          {width < MOBILE_THRESHOLD_WIDTH ? (
+            <MobileNavMenu />
+          ) : (
+            <DefaultNavMenu />
+          )}
         </div>
-        {/* <nav className="nav">
-        <Link className="navlink" to="#projects">
-          Projects
-        </Link>
-        <Link className="navlink" to="#about">
-          About
-        </Link>
-        <Link className="navlink" to="#contact">
-          Contact
-        </Link>
-        <a
-          href="/resume.pdf"
-          className="navlink "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </a>
-      </nav> */}
       </div>
     </header>
+  )
+}
+
+const DefaultNavMenu = () => {
+  return (
+    <>
+      <nav className="default-nav">
+        <ul>
+          <li>
+            <Link to="#projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="#about">About</Link>
+          </li>
+          <li>
+            <Link to="#skills">Skills</Link>
+          </li>
+          <li>
+            <Link to="#contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+    </>
   )
 }
 
