@@ -1,17 +1,18 @@
 import * as React from "react"
-import "./about.scss"
+
+import "../../../styles/about.scss"
 
 const About = () => {
   return (
     <section id="about">
+      <div className="section__header">
+        <h2>About</h2>
+        <div></div>
+      </div>
       <div className="about__inner container">
-        <div className="section__header">
-          <h2>About</h2>
-          <div></div>
-        </div>
         <div className="about-text">
           <p>
-            {`I am a graduate from UCLA with a B.S. in Mathematics of Computation.
+            {`I am a Front-End Web Developer from San Francisco and a recent graduate from UCLA with a B.S. in Mathematics of Computation.
             During my college career, I developed an interest for Computer
             Science and acquired a solid understanding of data structures &
             algorithms and computer organization & architecture. This formed

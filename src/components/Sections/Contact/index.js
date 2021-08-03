@@ -1,33 +1,30 @@
 import * as React from "react"
 import { IoMailUnreadOutline } from "react-icons/io5"
 
-import "./contact.scss"
+import "../../../styles/contact.scss"
 
 const Contact = () => {
   return (
     <section id="contact">
+      <div className="section__header">
+        <h2>Contact</h2>
+        <div></div>
+      </div>
       <div className="contact__inner container">
-        <div className="section__header">
-          <h2>Contact</h2>
-          <div></div>
-        </div>
-        <div className="email-card">
-          <div>
-            <IoMailUnreadOutline className="io-mail" size={120} />
-          </div>
-          <div>
-            <p>Email Me</p>
-            <a
-              href="mailto:horicky.cs@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              horicky.cs@gmail.com
-            </a>
-          </div>
-        </div>
+        <a
+          href="mailto:horicky.cs@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="email-card"
+        >
+          <IoMailUnreadOutline className="io-mail" />
+          <p>
+            <span>Email Me</span>
+            <span>horicky.cs@gmail.com</span>
+          </p>
+        </a>
 
-        <div>
+        <div className="form-wrap">
           <form action="" className="contact-form" autoComplete="off">
             <input type="name" id="name" placeholder="Your name*" required />
             <input type="email" id="email" placeholder="Your email*" required />

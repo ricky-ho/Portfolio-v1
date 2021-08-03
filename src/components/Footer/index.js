@@ -3,7 +3,7 @@ import { FiMail } from "react-icons/fi"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import { BiChevronUpCircle } from "react-icons/bi"
 
-import "./footer.scss"
+import "../../styles/footer.scss"
 
 const Footer = () => {
   return (

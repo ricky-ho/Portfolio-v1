@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: calc(100vh - var(--header-height));
-  background: var(--white);
+  max-height: 1080px;
   padding-bottom: 25px;
 }
 
@@ -32,6 +32,7 @@
 }
 
 .description {
+  font-size: var(--fontsize-s);
   color: var(--gray);
 
   span {
@@ -106,6 +107,36 @@
   }
 
   a + a {
-    margin-left: 10px;
+    margin-left: 15px;
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 700px) {
+  .hero__inner h1 {
+    :first-child {
+      font-size: var(--fontsize-m);
+    }
+
+    :nth-child(2) {
+      font-size: 4.5rem;
+    }
+  }
+
+  .description,
+  .cta-container a {
+    font-size: var(--fontsize-m);
+  }
+
+  .socials-container a > svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .description {
+    max-width: unset;
   }
 }

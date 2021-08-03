@@ -10,23 +10,18 @@
 }
 
 :root {
-  --gold: hsl(37, 69%, 54%);
-  --rust: hsl(7, 69%, 54%);
-  --primary: hsl(223, 100%, 60%);
-  --primary-light: hsl(209, 96%, 79%);
-  --primary-lighter: hsl(208, 100%, 94%);
-  --secondary: hsl(209, 69%, 54%);
-  --gray: hsl(0, 0%, 39%);
-  --lightgray: hsl(0, 0%, 69%);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
+  --primary: hsl(0, 0%, 100%);
+  --secondary: hsl(7, 69%, 54%);
+  --bg-color: hsl(0, 0%, 13%);
+  --card-bg-color: hsl(0, 0%, 15%);
+  --gray: hsl(0, 0%, 51%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
   --font-body: "Open Sans", Arial, sans-serif;
   --fontsize-s: 0.85rem;
-  --fontsize-m: 1.1rem;
-  --fontsize-l: 1.25rem;
-  --fontsize-xl: 1.5rem;
-  --fontsize-xxl: 2rem;
+  --fontsize-m: 1.25rem;
+  --fontsize-l: 1.5rem;
+  --fontsize-xl: 2rem;
+  --fontsize-xxl: 2.5rem;
   --header-height: 70px;
 }
 
@@ -35,7 +30,8 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: white;
+  font-family: var(--font-body);
+  background: var(--bg-color);
 }
 
 header,
@@ -49,14 +45,13 @@ main {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 0 25px;
   margin-top: var(--header-height);
 }
 
 section {
   font-family: var(--font-body);
   scroll-margin-top: calc(var(--header-height) + 20px);
-  padding-bottom: 75px;
+  padding: 0 25px 75px 25px;
 }
 
 .section__header {
@@ -68,13 +63,13 @@ section {
   div {
     width: 100%;
     height: 2px;
-    background-color: var(--primary);
+    background-color: var(--secondary);
   }
 
   h2 {
-    font-size: var(--fontsize-xl);
+    font-size: var(--fontsize-l);
     font-family: var(--font-headers);
-    color: var(--gray);
+    color: var(--primary);
     text-align: left;
     letter-spacing: 1px;
     padding-right: 20px;
@@ -85,7 +80,6 @@ section {
   width: 100%;
   max-width: 1440px;
   height: 100%;
-  margin: 0 auto;
 }
 
 a {
@@ -94,38 +88,52 @@ a {
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   header,
-  footer,
-  main {
+  footer {
     padding-left: 75px;
     padding-right: 75px;
+  }
+
+  section {
+    padding: 0 75px 100px 75px;
+  }
+
+  .section__header h2 {
+    font-size: var(--fontsize-xl);
   }
 }
 
 @media screen and (min-width: 1024px) {
   header,
-  footer,
-  main {
+  footer {
     padding-left: 100px;
     padding-right: 100px;
+  }
+
+  section {
+    padding: 0 100px 150px 100px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   header,
   footer,
-  main {
-    padding-left: 150px;
-    padding-right: 150px;
+  section {
+    padding-left: 225px;
+    padding-right: 225px;
+  }
+
+  .section__header h2 {
+    font-size: var(--fontsize-xxl);
   }
 }
 
 @media screen and (min-width: 1920px) {
   header,
   footer,
-  main {
-    padding-left: 250px;
-    padding-right: 250px;
+  section {
+    padding-left: 400px;
+    padding-right: 400px;
   }
 }

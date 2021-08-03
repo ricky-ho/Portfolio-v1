@@ -2,19 +2,23 @@ import * as React from "react"
 import { FaGithub } from "react-icons/fa"
 import { BiLinkExternal } from "react-icons/bi"
 
-import "./projects.scss"
+import "../../../styles/projects.scss"
 
 const Projects = () => {
   return (
     <section id="projects">
+      <div className="section__header">
+        <h2>Projects</h2>
+        <div></div>
+      </div>
       <div className="projects__inner container">
-        <div className="section__header">
-          <h2>Projects</h2>
-          <div></div>
-        </div>
-
         <div className="project-card">
-          <div className="project-image"></div>
+          <div className="project-image">
+            <img
+              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
+              alt="sample image"
+            />
+          </div>
           <div className="card__inner">
             <div className="card__header">
               <h3>Covid-19 Statistics</h3>
@@ -52,17 +56,22 @@ const Projects = () => {
           </div>
         </div>
         <div className="project-card">
-          <div className="project-image"></div>
+          <div className="project-image">
+            <img
+              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
+              alt="sample image"
+            />
+          </div>
           <div className="card__inner">
             <div className="card__header">
               <h3>Stocks Search</h3>
             </div>
             <p>
-              A stock market inspired, mobile-responsive, single-page
-              application that allows users to search for the latest market data
-              on any public stock listed on the Investors Exchange (IEX) with an
+              A stock market inspired, mobile-responsive, web application that
+              allows users to search for the latest market data on any public
+              stock listed on the Investors Exchange (IEX). Includes an
               interactive intraday price movement chart created with
-              ApexCharts.js. All market data is retrieved from IEX Cloud API.
+              ApexCharts.js. All market data is retrieved from IEXCloud API.
             </p>
             <ul>
               <li>React</li>
@@ -91,7 +100,12 @@ const Projects = () => {
           </div>
         </div>
         <div className="project-card">
-          <div className="project-image"></div>
+          <div className="project-image">
+            <img
+              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
+              alt="sample image"
+            />
+          </div>
           <div className="card__inner">
             <div className="card__header">
               <h3>Omomo-Clone</h3>
@@ -99,8 +113,8 @@ const Projects = () => {
             <p>
               A front-end, mobile-responsive, ecommerce web application inspired
               by Omomo Tea Shoppe that allows users to browse and shop online
-              for boba milk tea. Users will be able to modify drink
-              add-ons/options and add or remove items from their shopping cart.
+              for boba milk tea. Users will be able to modify drink add-ons or
+              options and add or remove items from their shopping cart.
             </p>
             <ul>
               <li>React</li>

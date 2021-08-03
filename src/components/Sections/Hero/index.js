@@ -2,7 +2,7 @@ import * as React from "react"
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 
-import "./hero.scss"
+import "../../../styles/hero.scss"
 
 const Hero = () => {
   return (

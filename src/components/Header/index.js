@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
 import { FiPhone } from "react-icons/fi"
 
-import "./header.scss"
+import "../../styles/header.scss"
 
 const MOBILE_THRESHOLD_WIDTH = 700
 

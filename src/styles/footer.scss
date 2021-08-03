@@ -66,3 +66,21 @@ footer {
     }
   }
 }
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+  footer {
+    height: 125px;
+  }
+
+  .footer__inner {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px 0;
+  }
+
+  .socials {
+    margin-bottom: 0;
+  }
+}
