@@ -1,13 +1,17 @@
+@import "./mixins";
+
+#skills {
+  @include fullWidthHeight;
+  background-color: var(--card-bg-color);
+}
+
 .skills__inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(column, center, center);
   width: 100%;
 
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     gap: 40px;
     width: 100%;
     place-items: center;
@@ -16,19 +20,18 @@
   }
 
   li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column, center, center);
+    @include fullWidthHeight;
+
     border-radius: 10px;
-    padding: 1rem 0.5rem;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 0 15px -3px var(--lightgray);
+    padding: 1rem 0.75rem;
+    background: hsl(0, 0%, 20%);
+    box-shadow: 0 0 15px -3px var(--bg-color);
 
     p {
       letter-spacing: 1px;
       font-size: var(--fontsize-s);
+      color: var(--primary);
       margin-bottom: 10px;
     }
   }

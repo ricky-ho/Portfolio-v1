@@ -1,17 +1,16 @@
+@import "./mixins";
+
 .projects__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  @include flex(column, flex-start, center);
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
+
   width: 100%;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px -3px var(--lightgray);
+  background: var(--card-bg-color);
 
   &:not(:last-child) {
     margin-bottom: 3rem;
@@ -30,7 +29,16 @@
 .card__inner {
   width: 100%;
   margin-top: 15px;
-  color: var(--black);
+  color: var(--primary);
+
+  h3 {
+    font-weight: bold;
+    font-size: var(--fontsize-l);
+    color: var(--secondary);
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
 
   p {
     font-size: var(--fontsize-s);
@@ -41,7 +49,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     li {
       font-size: var(--fontsize-s);
@@ -52,27 +60,11 @@
   }
 }
 
-.card__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 15px;
-
-  h3 {
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: var(--fontsize-l);
-    text-align: left;
-    color: var(--primary);
-  }
-}
-
 .project-links {
-  display: flex;
-  justify-content: flex-start;
+  @include flex(row, center);
 
   & > :first-child {
-    margin-right: 20px;
+    margin-right: 25px;
   }
 
   a {

@@ -13,29 +13,12 @@ footer {
 
   p {
     text-align: center;
-    font-family: var(--font-body);
-    color: var(--black);
+    font-size: var(--fontsize-s);
+    color: var(--gray);
 
     span {
-      color: var(--primary);
+      color: var(--secondary);
     }
-  }
-}
-
-.back-to-top {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -20px;
-  color: var(--primary);
-  background: var(--white);
-  transition: all 0.25s ease-in-out;
-  z-index: 10;
-
-  &:hover,
-  &:focus {
-    color: var(--black);
-    transform: translateY(-5px);
   }
 }
 
@@ -53,8 +36,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--black);
-    color: var(--white);
+    background: var(--primary);
+    color: hsl(0, 0%, 0%);
     border-radius: 50%;
     padding: 0.5rem;
     transition: all 0.25s ease;

@@ -1,17 +1,8 @@
+@import "./mixins";
+
 #contact {
-  background-color: var(--primary);
-
-  .section__header {
-    padding-top: 50px;
-
-    h2 {
-      color: var(--white);
-    }
-
-    & > :nth-child(2) {
-      background: var(--white);
-    }
-  }
+  @include fullWidthHeight;
+  background-color: var(--bg-color);
 }
 
 .contact__inner {
