@@ -163,22 +163,3 @@
 .nav-item-icon {
   margin-right: 20px;
 }
-
-/* MEDIA QUERIES */
-
-@media screen and (min-width: 425px) {
-  .menu ul a {
-    font-size: var(--fontsize-l);
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .menu ul a span {
-    margin-left: -90px;
-  }
-
-  .nav-item-icon {
-    transform: scale(1.35);
-    margin-right: 40px;
-  }
-}

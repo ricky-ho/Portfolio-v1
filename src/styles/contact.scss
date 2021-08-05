@@ -1,8 +1,10 @@
 @import "./mixins";
 
 #contact {
+  @include flex(row, center);
   @include fullWidthHeight;
   background-color: var(--bg-primary);
+  z-index: 1;
 }
 
 .contact__inner {

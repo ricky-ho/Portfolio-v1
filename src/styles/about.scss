@@ -1,5 +1,23 @@
 @import "./mixins";
 
+#about {
+  @include flex(column, flex-start, center);
+  @include fullWidthHeight;
+  z-index: 3;
+
+  &::after {
+    @include fullWidthHeight;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background: var(--bg-primary);
+    transform-origin: left bottom;
+    transform: skewY(5deg);
+    z-index: -1;
+  }
+}
+
 .about__inner {
   @include flex(column, center, center);
   width: 100%;

@@ -1,16 +1,18 @@
 @import ".//mixins";
 
 #hero {
-  @include flex(row, flex-start, center);
-
+  @include flex(row, center, center);
+  @include fullWidthHeight;
   position: relative;
   height: calc(100vh - var(--header-height));
   max-height: 1080px;
+  padding-top: 25px;
   padding-bottom: 25px;
 }
 
 .hero__inner {
   @include flex(column, center, flex-start);
+  @include fullWidthHeight;
 
   h1 {
     width: 100%;
@@ -128,11 +130,13 @@
 
 .hero__overlay {
   position: absolute;
+  top: 15%;
   left: 0;
-  right: 0;
   width: 100%;
   height: 75%;
+  max-height: 800px;
   background-color: hsla(0, 0%, 100%, 0.025);
+  overflow-x: hidden;
 }
 
 /* MEDIA QUERIES */
