@@ -5,11 +5,10 @@ import "../../../styles/about.scss"
 const About = () => {
   return (
     <section id="about">
-      <div className="section__header">
-        <h2>About</h2>
-        <div></div>
-      </div>
       <div className="about__inner container">
+        <div className="section__header">
+          <h2>About</h2>
+        </div>
         <div className="about-text">
           <p>
             {`I am a Front-End Web Developer from San Francisco and a recent graduate from UCLA with a B.S. in Mathematics of Computation.
@@ -29,10 +28,7 @@ const About = () => {
           <p>{`I always strive to learn new things and to improve upon my existing knowledge and skillset to become an overall better web developer.`}</p>
         </div>
         <div className="about-image__container">
-          <div className="about-image">
-            <div className="circle1"></div>
-            <div className="circle2"></div>
-          </div>
+          <div className="about-image"></div>
         </div>
       </div>
     </section>

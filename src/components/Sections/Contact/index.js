@@ -5,11 +5,11 @@ import "../../../styles/contact.scss"
 
 const Contact = () => {
   return (
-    <section id="contact">
-      <div className="section__header">
-        <h2>Contact</h2>
-      </div>
-      <div className="contact__inner container">
+    <section id="contact" className="container">
+      <div className="contact__inner">
+        <div className="section__header">
+          <h2>Contact</h2>
+        </div>
         <div className="contact__card">
           <h2>Get In Touch</h2>
           <a

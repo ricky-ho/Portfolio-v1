@@ -9,11 +9,11 @@ import "../../styles/header.scss"
 const MOBILE_THRESHOLD_WIDTH = 700
 
 const Header = () => {
-  const width = useScreenWidth()
+  let width = useScreenWidth()
 
   return (
     <header className="header">
-      <div className="header__inner">
+      <div className="header__inner container">
         <div>
           <a href="/">Logo </a>
         </div>

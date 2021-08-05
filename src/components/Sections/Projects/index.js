@@ -6,12 +6,11 @@ import "../../../styles/projects.scss"
 
 const Projects = () => {
   return (
-    <section id="projects">
-      <div className="section__header">
-        <h2>Projects</h2>
-        <div></div>
-      </div>
-      <div className="projects__inner container">
+    <section id="projects" className="container">
+      <div className="projects__inner">
+        <div className="section__header">
+          <h2>Projects</h2>
+        </div>
         <div className="project-card">
           <div className="project-image">
             <img
@@ -20,9 +19,7 @@ const Projects = () => {
             />
           </div>
           <div className="card__inner">
-            <div className="card__header">
-              <h3>Covid-19 Statistics</h3>
-            </div>
+            <h3>Covid-19 Statistics</h3>
             <p>
               View the latest Covid-19 statistics including number of cases,
               deaths, and vaccinations globally or by country as reported by Our

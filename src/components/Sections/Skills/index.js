@@ -20,11 +20,10 @@ import "../../../styles/skills.scss"
 const Skills = () => {
   return (
     <section id="skills">
-      <div className="section__header">
-        <h2>Skills</h2>
-        <div></div>
-      </div>
       <div className="skills__inner container">
+        <div className="section__header">
+          <h2>Skills</h2>
+        </div>
         <ul>
           <li>
             <p>HTML</p>

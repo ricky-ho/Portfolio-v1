@@ -9,10 +9,6 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer__inner container">
-        <a href="#hero" className="back-to-top" title="Back to Top">
-          <BiChevronUpCircle className="bi-chevron" size={40} />
-        </a>
-
         <div className="socials">
           <a
             href="https://github.com/ricky-ho"
@@ -40,7 +36,7 @@ const Footer = () => {
           </a>
         </div>
         <p>
-          &copy; 2021 <span>Ricky Ho</span>
+          &copy; 2021 Built by <span>Ricky Ho</span>
         </p>
       </div>
     </footer>
