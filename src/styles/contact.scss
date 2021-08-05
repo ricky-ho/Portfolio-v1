@@ -2,12 +2,12 @@
 
 #contact {
   @include fullWidthHeight;
-  background-color: var(--bg-color);
+  background-color: var(--bg-primary);
 }
 
 .contact__inner {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, center, flex-start);
+  width: 100%;
 
   p {
     text-align: center;
@@ -15,165 +15,147 @@
   }
 }
 
-.email-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1rem 1.5rem 1rem;
-  margin-bottom: 2.5rem;
-  border-radius: 1rem;
-  background-color: var(--rust);
+.contact__card {
+  @include flex(column, flex-start, center);
+  @include fullWidthHeight;
+  position: relative;
+  text-align: center;
+  padding: 15px 10px;
+  padding-bottom: 100px;
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
 
-  p {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--white);
-    width: 100%;
+  h2 {
+    position: relative;
+    font-size: var(--fontsize-m);
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
 
-    :first-child {
-      margin-bottom: 3px;
-    }
-
-    :nth-child(2) {
-      letter-spacing: 1px;
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
     }
   }
 
-  &:hover,
-  &:focus {
-    background: var(--white);
-    color: var(--black);
+  p {
+    color: var(--primary);
+    margin-bottom: 5px;
 
-    p {
-      color: var(--black);
+    & + p {
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--secondary);
     }
+  }
+
+  a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
 
     .io-mail {
+      width: 100%;
       color: var(--primary);
+      transition: inherit;
 
-      & > :nth-child(3),
-      & > :nth-child(4) {
-        color: hsl(123, 70%, 39%);
-        transform: translateY(-25px);
+      :nth-child(3),
+      :nth-child(4) {
+        transition: inherit;
+        color: hsl(0, 0%, 50%);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 0 13px hsla(0, 0%, 0%, 0.25);
+
+      .io-mail > :nth-child(3),
+      .io-mail > :nth-child(4) {
+        color: hsl(120, 100%, 50%);
+        transform: translateY(-65px);
       }
     }
   }
 }
 
-.io-mail {
+.contact__form-wrap {
+  @include flex(row, center);
+  position: relative;
+  top: -5em;
   width: 100%;
-  font-size: 6rem;
-  color: var(--white);
-
-  :nth-child(3),
-  :nth-child(4) {
-    transition: all 0.2s ease;
-    color: var(--lightgray);
-  }
 }
 
-.form-wrap {
-  width: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: var(--primary);
-}
+.form__inner {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 5px;
+  background: var(--secondary);
+  box-shadow: 0 3px 20px -3px hsla(0, 0%, 0%, 0.5);
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 25px;
+  .form__header {
+    @include flex(column, flex-start, center);
+    margin-bottom: 20px;
 
-  input,
-  textarea {
-    font-family: var(--body-font);
-    width: 100%;
-    padding: 0.5rem 1rem;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    outline: none;
-    border: 3px solid var(--primary);
-    color: var(--black);
-    background: var(--white);
-
-    &:focus {
-      border: 3px solid var(--rust);
+    & > div span {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary);
+      font-size: var(--fontsize-s);
+      margin-left: 5px;
     }
   }
 
-  button {
-    align-self: flex-start;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 20px;
-    font-size: var(--fontsize-m);
-    padding: 0.5rem 2rem;
-    background-color: var(--rust);
-    color: var(--white);
+  form {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    max-width: 500px;
+    background-color: inherit;
 
-    &:hover,
-    &:focus {
-      background: var(--rust);
+    input,
+    textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: var(--fontsize-s);
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      padding: 5px 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      font-family: inherit;
+      outline: none;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 25px;
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(0, 0%, 0%);
+      transition: all 0.2s ease;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transform: scale(1.02);
+        box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      }
     }
   }
 }
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 500px) {
-  .email-card {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-  }
-
-  .io-mail {
-    width: 100%;
-    font-size: 7.5rem;
-  }
-
-  .contact-form {
-    input,
-    textarea {
-      font-size: 1rem;
-    }
-
-    button {
-      font-size: var(--fontsize-l);
-    }
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .email-card {
-    flex-direction: column;
-
-    p {
-      text-align: center;
-    }
-
-    span {
-      display: block;
-    }
-  }
-
-  .contact-form {
-    width: 100%;
-
-    input,
-    textarea {
-      width: 100%;
-    }
-  }
 }
