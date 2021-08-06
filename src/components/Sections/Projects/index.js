@@ -12,7 +12,7 @@ const Projects = () => {
           <h2>Projects</h2>
         </div>
         <div className="project-card">
-          <div className="project-image">
+          <div className="project__img-wrap">
             <img
               src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
               alt="sample image"
@@ -53,7 +53,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="project-card">
-          <div className="project-image">
+          <div className="project__img-wrap">
             <img
               src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
               alt="sample image"
@@ -97,7 +97,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="project-card">
-          <div className="project-image">
+          <div className="project__img-wrap">
             <img
               src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
               alt="sample image"
