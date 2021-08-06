@@ -21,6 +21,15 @@
   padding: 10px 0px;
 }
 
+.menu-wrap {
+  @include flex(row, flex-end, center);
+  @include fullWidthHeight;
+
+  position: relative;
+  z-index: 999;
+  background: inherit;
+}
+
 .default-nav {
   display: flex;
 
@@ -29,27 +38,33 @@
     list-style: none;
 
     :not(:last-child) {
-      margin-right: 25px;
+      margin-right: 35px;
+    }
+
+    li {
+      @include flex(row, center, center);
+
+      a {
+        display: block;
+        color: hsl(0, 0%, 100%);
+        transition: all 0.2s ease;
+
+        &:hover,
+        &:focus {
+          color: var(--gray);
+        }
+      }
+    }
+
+    :first-child a {
+      color: var(--secondary);
+
+      &:hover,
+      &:focus {
+        color: hsla(7, 59%, 38%, 0.75);
+      }
     }
   }
-
-  li {
-    @include flex(row, center, center);
-  }
-
-  a {
-    display: block;
-    color: var(--primary);
-  }
-}
-
-.menu-wrap {
-  @include flex(row, flex-end, center);
-  @include fullWidthHeight;
-
-  position: relative;
-  z-index: 999;
-  background: inherit;
 }
 
 .toggler {

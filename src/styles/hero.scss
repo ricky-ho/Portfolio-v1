@@ -18,7 +18,7 @@
     width: 100%;
     margin-bottom: 15px;
     font-family: var(--font-headers);
-    font-size: var(--fontsize-s);
+    font-size: clamp(var(--fontsize-s), 2vw, var(--fontsize-m));
     font-weight: normal;
     color: var(--primary);
 
@@ -31,18 +31,18 @@
 
 .hero__text {
   @include flex(row, flex-start, center);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   div {
     min-width: 5px;
     width: 5px;
     height: 95%;
-    margin-right: 15px;
+    margin-right: clamp(15px, 2vw, 25px);
     background-color: var(--secondary);
   }
 
   p {
-    font-size: var(--fontsize-m);
+    font-size: clamp(var(--fontsize-m), 3.5vw, var(--fontsize-xxxl));
     color: var(--primary);
   }
 
@@ -52,9 +52,8 @@
 }
 
 .description {
-  font-size: var(--fontsize-s);
+  font-size: clamp(var(--fontsize-s), 2vw, var(--fontsize-m));
   color: var(--primary);
-  letter-spacing: 1px;
 
   span {
     color: var(--secondary);
@@ -74,34 +73,30 @@
     @include flex(row, center, center);
 
     border-radius: 30px;
+    font-size: var(--fontsize-s);
+    letter-spacing: 1px;
     text-decoration: none;
     transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 15px 0 hsla(7, 69%, 54%, 0.8),
+        0 0px 15px hsla(0, 0%, 0%, 0.75);
+    }
   }
 
   :first-child {
-    font-size: var(--fontsize-s);
     color: var(--primary);
     background-color: var(--secondary);
     padding: 0.5em 1em 0.7em 1em;
     margin-right: 15px;
-
-    // &:hover,
-    // &:focus {
-    //   // background-color: hsl(0, 0%, 0%);
-    //   // box-shadow: 0 3px 10px hsl(0, 0%, 0%);
-    // }
   }
 
   :nth-child(2) {
-    font-size: var(--fontsize-s);
     color: var(--secondary);
     border: 1px solid var(--secondary);
     padding: 0.5em 1em 0.6em 1em;
-
-    // &:hover,
-    // &:focus {
-    //   --theme: var(--rust);
-    // }
   }
 }
 
@@ -109,18 +104,19 @@
   justify-content: flex-start;
 
   a {
-    display: flex;
+    @include flex(row, center, center);
+    padding: 8px;
+    border-radius: 50%;
     color: hsl(0, 0%, 100%);
     background-color: hsl(0, 0%, 7%);
-    padding: 7px;
-    border-radius: 50%;
-    align-items: center;
     transition: all 0.2s ease-in;
 
-    // &:hover,
-    // &:focus {
-    //   background-color: var(--gold);
-    // }
+    &:hover,
+    &:focus {
+      color: hsl(0, 0%, 0%);
+      background: hsl(0%, 0%, 100%);
+      transform: translateY(-3px);
+    }
   }
 
   a + a {
@@ -141,20 +137,39 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 700px) {
-  .description,
-  .cta-container a {
-    font-size: var(--fontsize-m);
+@media screen and (min-width: 768px) {
+  .cta-container {
+    :first-child {
+      margin-right: 25px;
+    }
+
+    a {
+      font-size: 1rem;
+    }
   }
 
+  .socials-container {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .socials-container a > svg {
     width: 20px;
     height: 20px;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .description {
-    max-width: unset;
+@media screen and (min-width: 1440px) {
+  .hero__text {
+    margin-bottom: 30px;
+  }
+
+  .cta-container {
+    margin: 30px 0;
+
+    a {
+      font-size: var(--fontsize-m);
+    }
   }
 }
