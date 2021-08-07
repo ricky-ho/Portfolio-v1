@@ -42,7 +42,7 @@
   }
 
   p {
-    font-size: clamp(var(--fontsize-m), 3.5vw, var(--fontsize-xxxl));
+    font-size: clamp(var(--fontsize-l), 3.5vw, var(--fontsize-xxxl));
     color: var(--primary);
   }
 
@@ -82,7 +82,7 @@
     &:focus {
       transform: translateY(-3px);
       box-shadow: 0 3px 15px 0 hsla(7, 69%, 54%, 0.8),
-        0 0px 15px hsla(0, 0%, 0%, 0.75);
+        0 0 15px hsla(0, 0%, 0%, 0.75);
     }
   }
 

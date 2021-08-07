@@ -36,7 +36,14 @@ const Footer = () => {
           </a>
         </div>
         <p>
-          &copy; 2021 Built by <span>Ricky Ho</span>
+          &copy; 2021 Built by{" "}
+          <a
+            href="https://github.com/ricky-ho/Portfolio-v1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ricky Ho
+          </a>
         </p>
       </div>
     </footer>

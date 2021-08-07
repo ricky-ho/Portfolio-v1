@@ -55,3 +55,16 @@
   width: 40px;
   height: 40px;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 900px) {
+  #skills {
+    padding-top: clamp(90px, 10%, 200px);
+    padding-bottom: clamp(90px, 10%, 120px);
+  }
+
+  .skills__inner ul {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}

@@ -8,7 +8,7 @@
 }
 
 .contact__inner {
-  @include flex(column, center, flex-start);
+  @include flex(column, center, center);
   width: 100%;
 
   p {
@@ -20,6 +20,7 @@
 .contact__card {
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
+  max-width: 800px;
   position: relative;
   text-align: center;
   padding: 15px 10px;
@@ -78,7 +79,8 @@
     &:hover,
     &:focus {
       transform: translateY(-3px);
-      box-shadow: 0 0 13px hsla(0, 0%, 0%, 0.25);
+      box-shadow: 0 0 15px 0 hsla(7, 69%, 54%, 0.8),
+        0 0 15px hsla(0, 0%, 0%, 0.75);
 
       .io-mail > :nth-child(3),
       .io-mail > :nth-child(4) {
@@ -96,7 +98,7 @@
   width: 100%;
 }
 
-.form__inner {
+.form-wrap__inner {
   width: 80%;
   max-width: 500px;
   padding: 10px 20px 20px 20px;
@@ -104,23 +106,9 @@
   background: var(--secondary);
   box-shadow: 0 3px 20px -3px hsla(0, 0%, 0%, 0.5);
 
-  .form__header {
-    @include flex(column, flex-start, center);
-    margin-bottom: 20px;
-
-    & > div span {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary);
-      font-size: var(--fontsize-s);
-      margin-left: 5px;
-    }
-  }
-
   form {
     @include flex(column, flex-start, center);
     width: 100%;
-    max-width: 500px;
     background-color: inherit;
 
     input,
@@ -129,10 +117,15 @@
       font-family: inherit;
       font-size: var(--fontsize-s);
       border-radius: 5px;
-      border: none;
+      border: 2px solid var(--secondary);
       outline: none;
-      padding: 5px 8px;
+      padding: 8px;
       margin-bottom: 15px;
+      resize: none;
+
+      &:focus {
+        border: 2px solid black;
+      }
     }
 
     button {
@@ -155,8 +148,24 @@
   }
 }
 
+.form-wrap__header {
+  @include flex(column, flex-start, center);
+  margin-bottom: 20px;
+
+  & > div span {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-size: var(--fontsize-s);
+    margin-left: 5px;
+  }
+}
+
 /* MEDIA QUERIES */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 900px) {
+  #contact {
+    padding-top: clamp(90px, 10%, 200px);
+  }
 }
 
 @media screen and (min-width: 768px) {

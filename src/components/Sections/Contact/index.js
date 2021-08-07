@@ -24,8 +24,8 @@ const Contact = () => {
           <p>horicky.cs@gmail.com</p>
         </div>
         <div className="contact__form-wrap">
-          <div className="form__inner">
-            <div className="form__header">
+          <div className="form-wrap__inner">
+            <div className="form-wrap__header">
               <IoPersonCircleOutline
                 className="io-person-circle"
                 color="white"
@@ -64,23 +64,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        {/*
-
-        <div className="form-wrap">
-          <form action="" className="contact-form" autoComplete="off">
-            <input type="name" id="name" placeholder="Your name*" required />
-            <input type="email" id="email" placeholder="Your email*" required />
-            <input type="text" id="subject" placeholder="Subject*" required />
-            <textarea
-              name="message"
-              id="message"
-              rows="6"
-              placeholder="Your message*"
-              required
-            ></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </div> */}
       </div>
     </section>
   )

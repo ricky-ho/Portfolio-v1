@@ -6,12 +6,8 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 /* 
   TO DO:
     - Add resume links in Header and Hero section
-    - Add responsiveness
-    - Add animation effects 
-    - Create page loading effect
+    - Add animation effects to sections
     - Create a Logo and Favicon for portfolio
-    - Add light/dark mode feature
-
 */
 
 const IndexPage = () => (

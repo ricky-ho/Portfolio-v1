@@ -48,7 +48,7 @@
 main {
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
-
+  min-height: 100vh;
   margin-top: var(--header-height);
 }
 
@@ -110,6 +110,12 @@ a {
 
   .section__header h2 {
     font-size: var(--fontsize-xl);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section__header {
+    margin-bottom: 5rem;
   }
 }
 

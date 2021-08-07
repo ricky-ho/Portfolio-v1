@@ -35,16 +35,16 @@ const DefaultNavMenu = () => {
       <nav className="default-nav">
         <ul>
           <li>
-            <Link to="#projects">Projects</Link>
+            <Link to="/#projects">Projects</Link>
           </li>
           <li>
-            <Link to="#about">About</Link>
+            <Link to="/#about">About</Link>
           </li>
           <li>
-            <Link to="#skills">Skills</Link>
+            <Link to="/#skills">Skills</Link>
           </li>
           <li>
-            <Link to="#contact">Contact</Link>
+            <Link to="/#contact">Contact</Link>
           </li>
         </ul>
       </nav>
@@ -69,7 +69,7 @@ const MobileNavMenu = () => {
       <nav className="menu">
         <ul>
           <li>
-            <Link to="#projects" onClick={() => closeNavMenu()}>
+            <Link to="/#projects" onClick={() => closeNavMenu()}>
               <span>
                 <BsBriefcase className="nav-item-icon" size={20} />
                 Projects
@@ -77,7 +77,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="#about" onClick={() => closeNavMenu()}>
+            <Link to="/#about" onClick={() => closeNavMenu()}>
               <span>
                 <BsPerson className="nav-item-icon" size={20} />
                 About
@@ -85,7 +85,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="#skills" onClick={() => closeNavMenu()}>
+            <Link to="/#skills" onClick={() => closeNavMenu()}>
               <span>
                 <BsListCheck className="nav-item-icon" size={20} />
                 Skills
@@ -93,7 +93,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="#contact" onClick={() => closeNavMenu()}>
+            <Link to="/#contact" onClick={() => closeNavMenu()}>
               <span>
                 <FiPhone className="nav-item-icon" size={20} />
                 Contact
