@@ -1,0 +1,42 @@
+@import "./mixins";
+
+#not-found-section {
+  @include flex(column, center, center);
+  @include fullWidthHeight;
+  font-family: var(--font-headers);
+  min-height: calc(100vh - var(--header-height));
+  margin: 0;
+  padding: 0 0 15% 0;
+
+  h1,
+  h2 {
+    @include fullWidthHeight;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(6rem, 20vw, 10rem);
+    color: var(--secondary);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+  }
+
+  a {
+    font-family: inherit;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: var(--secondary);
+    color: var(--primary);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 15px 0 hsla(7, 69%, 54%, 0.8),
+        0 0 15px hsla(0, 0%, 0%, 0.75);
+    }
+  }
+}
