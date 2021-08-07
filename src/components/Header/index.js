@@ -2,7 +2,8 @@ import * as React from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
-import { FiPhone } from "react-icons/fi"
+import { FiPhone, FiMail } from "react-icons/fi"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/header.scss"
 
@@ -101,6 +102,32 @@ const MobileNavMenu = () => {
             </Link>
           </li>
         </ul>
+        <div>
+          <a
+            href="https://github.com/ricky-ho"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="https://github.com/ricky-ho"
+          >
+            <FaGithub size={15} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ricky-ho-01/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="https://www.linkedin.com/in/ricky-ho-01"
+          >
+            <FaLinkedin size={15} />
+          </a>
+          <a
+            href="mailto:horicky.cs@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="mailto:horicky.cs@gmail.com"
+          >
+            <FiMail size={15} />
+          </a>
+        </div>
       </nav>
     </>
   )

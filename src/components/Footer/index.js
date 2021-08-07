@@ -1,7 +1,6 @@
 import * as React from "react"
 import { FiMail } from "react-icons/fi"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { BiChevronUpCircle } from "react-icons/bi"
 
 import "../../styles/footer.scss"
 
@@ -9,7 +8,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer__inner container">
-        <div className="socials">
+        <div className="footer__socials">
           <a
             href="https://github.com/ricky-ho"
             target="_blank"

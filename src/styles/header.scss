@@ -120,7 +120,6 @@
 
 .menu {
   @include fullWidthHeight;
-
   position: fixed;
   top: 0;
   right: -150%;
@@ -169,8 +168,16 @@
         position: relative;
         left: 50%;
         width: fit-content;
-        margin-left: -65px;
+        transform: translate(-50%);
       }
+    }
+  }
+
+  & > div {
+    @include flex(row, center, center);
+
+    a {
+      @include socialIcons;
     }
   }
 }

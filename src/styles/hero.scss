@@ -104,23 +104,7 @@
   justify-content: flex-start;
 
   a {
-    @include flex(row, center, center);
-    padding: 8px;
-    border-radius: 50%;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(0, 0%, 7%);
-    transition: all 0.2s ease-in;
-
-    &:hover,
-    &:focus {
-      color: hsl(0, 0%, 0%);
-      background: hsl(0%, 0%, 100%);
-      transform: translateY(-3px);
-    }
-  }
-
-  a + a {
-    margin-left: 15px;
+    @include socialIcons;
   }
 }
 
