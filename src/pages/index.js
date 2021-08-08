@@ -5,7 +5,7 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 
 /* 
   TO DO:
-    - Add resume links in Header and Hero section
+    - Add resume link in Hero section
     - Add animation effects to sections
     - Create a Logo and Favicon for portfolio
 */

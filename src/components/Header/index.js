@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
 import { FiPhone, FiMail } from "react-icons/fi"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { Logo } from "../../assets"
 
 import "../../styles/header.scss"
 
@@ -15,8 +16,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__inner container">
-        <div>
-          <a href="/">Logo </a>
+        <div className="header__logo-wrap">
+          <a href="/">
+            <Logo className="logo" />
+          </a>
         </div>
         <div className="menu-wrap">
           {width < MOBILE_THRESHOLD_WIDTH ? (

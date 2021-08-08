@@ -11,6 +11,7 @@ import GatsbyIcon from "./gatsby.svg"
 import HerokuIcon from "./heroku.svg"
 import FigmaIcon from "./figma.svg"
 import PythonIcon from "./python.svg"
+import Logo from "./logo.svg"
 
 export {
   HtmlIcon,
@@ -26,4 +27,5 @@ export {
   HerokuIcon,
   FigmaIcon,
   PythonIcon,
+  Logo,
 }

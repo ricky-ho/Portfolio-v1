@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: var(--header-height);
   color: var(--primary);
   background-color: inherit;
   z-index: 99;
@@ -18,7 +18,27 @@
 
   position: relative;
   width: 100%;
-  padding: 10px 0px;
+  padding: 20px 0px;
+}
+
+.header__logo-wrap {
+  @include flex(row, center, center);
+  width: 50px;
+  height: 100%;
+  font-family: var(--font-headers);
+  color: var(--secondary);
+  font-size: var(--fontsize-xl);
+
+  a {
+    @include flex(row, center, center);
+    @include fullWidthHeight;
+  }
+
+  .logo {
+    @include fullWidthHeight;
+    background: var(--bg-color);
+    color: var(--secondary);
+  }
 }
 
 .menu-wrap {
@@ -38,7 +58,7 @@
     list-style: none;
 
     :not(:last-child) {
-      margin-right: 35px;
+      margin-right: clamp(35px, 5vw, 50px);
     }
 
     li {
@@ -46,6 +66,8 @@
 
       a {
         display: block;
+        font-size: clamp(1rem, 1.5vw, var(--fontsize-m));
+        font-family: var(--font-headers);
         color: hsl(0, 0%, 100%);
         transition: all 0.2s ease;
 
