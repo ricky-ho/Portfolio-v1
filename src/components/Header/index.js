@@ -1,5 +1,6 @@
 import * as React from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
+import useScrollDirection from "../../hooks/useScrollDirection"
 import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
 import { FiPhone, FiMail } from "react-icons/fi"
@@ -11,10 +12,28 @@ import "../../styles/header.scss"
 const MOBILE_THRESHOLD_WIDTH = 700
 
 const Header = () => {
-  let width = useScreenWidth()
+  const width = useScreenWidth()
+  const scrollDirection = useScrollDirection()
+  const [scrolledToTop, setScrolledToTop] = React.useState(true)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolledToTop(window.pageYOffset < 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const headerStyle =
+    !scrolledToTop && scrollDirection === "up"
+      ? "header__show"
+      : !scrolledToTop && scrollDirection === "down"
+      ? "header__hide"
+      : ""
 
   return (
-    <header className="header">
+    <header className={`header ${headerStyle}`}>
       <div className="header__inner container">
         <div className="header__logo-wrap">
           <a href="/">

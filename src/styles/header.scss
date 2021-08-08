@@ -10,7 +10,17 @@
   height: var(--header-height);
   color: var(--primary);
   background-color: inherit;
-  z-index: 99;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+.header__show {
+  transform: translateY(0);
+  box-shadow: 0 5px 30px -10px hsla(0, 0%, 0%, 0.6);
+}
+
+.header__hide {
+  transform: translateY(calc(-2 * var(--header-height)));
 }
 
 .header__inner {
