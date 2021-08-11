@@ -14,17 +14,17 @@
 :root {
   --primary: hsl(0, 0%, 100%);
   --secondary: hsl(7, 69%, 54%);
-  --bg-primary: hsl(0, 0%, 13%);
-  --bg-secondary: hsl(0, 0%, 17%);
+  --bg-primary: hsl(0, 0%, 10%);
+  --bg-secondary: hsl(0, 0%, 15%);
   --gray: hsl(0, 0%, 60%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
   --font-body: "Open Sans", Arial, sans-serif;
+  --fontsize-xs: 0.7rem;
   --fontsize-s: 0.85rem;
   --fontsize-m: 1.25rem;
   --fontsize-l: 1.5rem;
   --fontsize-xl: 2rem;
   --fontsize-xxl: 2.5rem;
-  --fontsize-xxxl: 3.25rem;
   --header-height: 100px;
   --sectionPaddingTop: 90px;
   --sectionPaddingSides: 25px;
@@ -101,15 +101,11 @@ a {
   .header__inner,
   .footer__inner,
   section {
-    --sectionPaddingSides: clamp(50px, 10%, 100px);
+    --sectionPaddingSides: 50px;
   }
 
   section {
     --sectionPaddingBottom: 75px;
-  }
-
-  .section__header h2 {
-    font-size: var(--fontsize-xl);
   }
 }
 
@@ -120,21 +116,21 @@ a {
 }
 
 @media screen and (min-width: 1080px) {
+  #hero,
   #about,
   #skills {
     padding-left: 0;
     padding-right: 0;
   }
 
+  .hero__inner,
   .about__inner,
   .skills__inner {
     padding-left: var(--sectionPaddingSides);
     padding-right: var(--sectionPaddingSides);
   }
-}
 
-@media screen and (min-width: 1440px) {
   .section__header h2 {
-    font-size: var(--fontsize-xxl);
+    font-size: var(--fontsize-xl);
   }
 }
