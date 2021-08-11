@@ -10,6 +10,7 @@
 .contact__inner {
   @include flex(column, center, center);
   width: 100%;
+  margin-top: 5rem;
 
   p {
     text-align: center;
@@ -20,72 +21,58 @@
 .contact__card {
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
-  max-width: 800px;
   position: relative;
   text-align: center;
-  padding: 15px 10px;
+  padding: 1.5rem 2rem;
   padding-bottom: 100px;
   border-radius: 5px;
   background-color: var(--bg-secondary);
 
   h2 {
     position: relative;
-    font-size: var(--fontsize-m);
+    font-size: var(--fontsize-l);
     color: var(--primary);
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     &::after {
       position: absolute;
       left: 0;
-      bottom: -7px;
+      bottom: -10px;
       content: "";
       width: 100%;
       height: 3px;
       background-color: var(--secondary);
     }
   }
+}
 
-  p {
-    color: var(--primary);
-    margin-bottom: 5px;
+.contact__options {
+  @include flex(column, flex-start, center);
+  @include fullWidthHeight;
 
-    & + p {
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: var(--secondary);
-    }
+  ul {
+    list-style: none;
   }
 
-  a {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: var(--secondary);
-    margin-bottom: 10px;
-    transition: all 0.2s ease;
+  li {
+    display: flex;
+    margin-bottom: 5px;
 
-    .io-mail {
-      width: 100%;
-      color: var(--primary);
-      transition: inherit;
-
-      :nth-child(3),
-      :nth-child(4) {
-        transition: inherit;
-        color: hsl(0, 0%, 50%);
-      }
+    span {
+      color: var(--secondary);
+      margin-right: 10px;
     }
 
-    &:hover,
-    &:focus {
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px 0 hsla(7, 69%, 54%, 0.8),
-        0 0 15px hsla(0, 0%, 0%, 0.75);
+    a {
+      font-family: inherit;
+      color: var(--gray);
+      font-family: var(--fontsize-xs);
+      text-align: left;
 
-      .io-mail > :nth-child(3),
-      .io-mail > :nth-child(4) {
-        color: hsl(120, 100%, 50%);
-        transform: translateY(-65px);
+      &:hover,
+      &:focus {
+        color: var(--primary);
       }
     }
   }
@@ -99,8 +86,7 @@
 }
 
 .form-wrap__inner {
-  width: 80%;
-  max-width: 500px;
+  width: 85%;
   padding: 10px 20px 20px 20px;
   border-radius: 5px;
   background: var(--secondary);
@@ -118,13 +104,12 @@
       font-size: var(--fontsize-s);
       border-radius: 5px;
       border: 2px solid var(--secondary);
-      outline: none;
       padding: 8px;
       margin-bottom: 15px;
       resize: none;
 
       &:focus {
-        border: 2px solid black;
+        border: 2px solid hsl(0, 0%, 0%);
       }
     }
 
@@ -141,7 +126,7 @@
       &:hover,
       &:focus {
         cursor: pointer;
-        transform: scale(1.02);
+        transform: scale(1.03);
         box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
       }
     }
@@ -162,11 +147,54 @@
 }
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 700px) {
+  .contact__inner {
+    @include flex(row, flex-start);
+    @include fullWidthHeight;
+    gap: 3rem;
+  }
+
+  .contact__card {
+    flex: 1;
+    align-items: flex-start;
+    background: inherit;
+    padding: 0;
+  }
+
+  .contact__options {
+    align-items: flex-start;
+  }
+
+  .contact__form-wrap {
+    flex: 2;
+    position: unset;
+
+    .form-wrap__inner {
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (min-width: 900px) {
   #contact {
     padding-top: clamp(90px, 10%, 200px);
   }
+
+  .form-wrap__inner {
+    padding: 1rem 2rem;
+
+    form input,
+    form textarea {
+      font-size: 1rem;
+      padding: 10px;
+      margin-bottom: 1.5rem;
+    }
+  }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1080px) {
+  .contact__card h2 {
+    font-size: var(--fontsize-xl);
+    margin-bottom: 3rem;
+  }
 }

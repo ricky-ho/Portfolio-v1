@@ -1,5 +1,6 @@
 import * as React from "react"
-import { IoMailUnreadOutline, IoPersonCircleOutline } from "react-icons/io5"
+import { IoPersonCircleOutline } from "react-icons/io5"
+import { AiOutlineMail, AiOutlineGithub, AiFillLinkedin } from "react-icons/ai"
 
 import "../../../styles/contact.scss"
 
@@ -7,21 +8,48 @@ const Contact = () => {
   return (
     <section id="contact" className="container">
       <div className="contact__inner">
-        <div className="section__header">
-          <h2>Contact</h2>
-        </div>
         <div className="contact__card">
           <h2>Get In Touch</h2>
-          <a
-            href="mailto:horicky.cs@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IoMailUnreadOutline className="io-mail" size={45} />
-          </a>
-
-          <p>Email me at</p>
-          <p>horicky.cs@gmail.com</p>
+          <div className="contact__options">
+            <ul>
+              <li>
+                <span>
+                  <AiOutlineMail size={20} />
+                </span>
+                <a
+                  href="mailto:horicky.cs@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  horicky.cs@gmail.com
+                </a>
+              </li>
+              <li>
+                <span>
+                  <AiOutlineGithub size={20} />
+                </span>
+                <a
+                  href="https://github.com/ricky-ho"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+              </li>
+              <li>
+                <span>
+                  <AiFillLinkedin size={20} />
+                </span>
+                <a
+                  href="https://www.linkedin.com/in/ricky-ho-01/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="contact__form-wrap">
           <div className="form-wrap__inner">
