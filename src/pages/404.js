@@ -5,7 +5,7 @@ import { NotFoundSection } from "../components/Sections"
 
 const NotFoundPage = () => (
   <Layout>
-    <Seo title="Page not found" />
+    <Seo title="Page Not Found | Ricky Ho" />
     <NotFoundSection />
   </Layout>
 )

@@ -7,12 +7,14 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
   TO DO:
     - Add resume link in Hero section
     - Add animation effects to sections
-    - Create a Logo and Favicon for portfolio
+    - Make Project images more clear/HD
+    - Change Project description and About Me
+    - Prevent scrolling when mobile nav is open
 */
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Ricky Ho" />
+    <Seo title="Ricky Ho | Front-End Developer" />
     <Hero />
     <Projects />
     <About />
