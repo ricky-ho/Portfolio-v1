@@ -1,10 +1,8 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
-import useScrollDirection from "../../hooks/useScrollDirection"
 import { Link } from "gatsby"
 import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
-import { FiPhone, FiMail } from "react-icons/fi"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { FiPhone } from "react-icons/fi"
 import { Logo } from "../../assets"
 
 import "../../styles/header.scss"
@@ -13,39 +11,28 @@ const MOBILE_THRESHOLD_WIDTH = 700
 
 const Header = () => {
   const width = useScreenWidth()
-  const scrollDirection = useScrollDirection()
-  const [scrolledToTop, setScrolledToTop] = React.useState(true)
+  const useMobileNav = width < MOBILE_THRESHOLD_WIDTH
+  const [scrolledToTop, setScrolledToTop] = useState(true)
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setScrolledToTop(window.pageYOffset < 50)
-    }
+  useEffect(() => {
+    const handleScroll = () => setScrolledToTop(window.pageYOffset < 50)
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const headerStyle =
-    !scrolledToTop && scrollDirection === "up"
-      ? "header__show"
-      : !scrolledToTop && scrollDirection === "down"
-      ? "header__hide"
-      : ""
+  const headerStyle = !scrolledToTop ? "header__shadow" : ""
 
   return (
     <header className={`header ${headerStyle}`}>
-      <div className="header__inner container">
+      <div className="header__inner">
         <div className="header__logo-wrap">
           <a href="/">
             <Logo className="logo" />
           </a>
         </div>
         <div className="menu-wrap">
-          {width < MOBILE_THRESHOLD_WIDTH ? (
-            <MobileNavMenu />
-          ) : (
-            <DefaultNavMenu />
-          )}
+          {useMobileNav ? <MobileNavMenu /> : <DefaultNavMenu />}
         </div>
       </div>
     </header>
@@ -76,23 +63,25 @@ const DefaultNavMenu = () => {
 }
 
 const MobileNavMenu = () => {
-  const closeNavMenu = () => {
-    const menuToggler = document.querySelector(".toggler")
-    if (menuToggler.checked) {
-      menuToggler.checked = false
-    }
-  }
+  const [isActive, setIsActive] = useState(false)
+
+  const toggleMenu = () => setIsActive(!isActive)
 
   return (
     <>
-      <input type="checkbox" className="toggler" aria-label="Toggle Menu" />
+      <button
+        type="button"
+        className="toggler"
+        onClick={() => toggleMenu()}
+        aria-label="Toggle Menu"
+      />
       <div className="hamburger-icon">
         <div></div>
       </div>
-      <nav className="menu">
+      <nav className={`menu ${isActive ? "menu__active" : ""}`}>
         <ul>
           <li>
-            <Link to="/#projects" onClick={() => closeNavMenu()}>
+            <Link to="/#projects" onClick={() => toggleMenu()}>
               <span>
                 <BsBriefcase className="nav-item-icon" size={20} />
                 Projects
@@ -100,7 +89,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#about" onClick={() => closeNavMenu()}>
+            <Link to="/#about" onClick={() => toggleMenu()}>
               <span>
                 <BsPerson className="nav-item-icon" size={20} />
                 About
@@ -108,7 +97,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#skills" onClick={() => closeNavMenu()}>
+            <Link to="/#skills" onClick={() => toggleMenu()}>
               <span>
                 <BsListCheck className="nav-item-icon" size={20} />
                 Skills
@@ -116,7 +105,7 @@ const MobileNavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#contact" onClick={() => closeNavMenu()}>
+            <Link to="/#contact" onClick={() => toggleMenu()}>
               <span>
                 <FiPhone className="nav-item-icon" size={20} />
                 Contact
@@ -124,32 +113,6 @@ const MobileNavMenu = () => {
             </Link>
           </li>
         </ul>
-        <div>
-          <a
-            href="https://github.com/ricky-ho"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="https://github.com/ricky-ho"
-          >
-            <FaGithub size={15} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ricky-ho-01/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="https://www.linkedin.com/in/ricky-ho-01"
-          >
-            <FaLinkedin size={15} />
-          </a>
-          <a
-            href="mailto:horicky.cs@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="mailto:horicky.cs@gmail.com"
-          >
-            <FiMail size={15} />
-          </a>
-        </div>
       </nav>
     </>
   )

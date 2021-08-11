@@ -10,17 +10,12 @@
   height: var(--header-height);
   color: var(--primary);
   background-color: inherit;
-  transition: all 0.5s ease;
+  transition: transform 0.3s ease;
   z-index: 999;
 }
 
-.header__show {
-  transform: translateY(0);
+.header__shadow {
   box-shadow: 0 5px 30px -10px hsla(0, 0%, 0%, 0.6);
-}
-
-.header__hide {
-  transform: translateY(calc(-2 * var(--header-height)));
 }
 
 .header__inner {
@@ -28,16 +23,13 @@
 
   position: relative;
   width: 100%;
-  padding: 20px 0px;
 }
 
 .header__logo-wrap {
   @include flex(row, center, center);
-  width: 50px;
+  width: 40px;
+  min-width: 40px;
   height: 100%;
-  font-family: var(--font-headers);
-  color: var(--secondary);
-  font-size: var(--fontsize-xl);
 
   a {
     @include flex(row, center, center);
@@ -76,7 +68,7 @@
 
       a {
         display: block;
-        font-size: clamp(1rem, 1.5vw, var(--fontsize-m));
+        font-size: 1rem;
         font-family: var(--font-headers);
         color: hsl(0, 0%, 100%);
         transition: all 0.2s ease;
@@ -106,11 +98,6 @@
   height: 50px;
   opacity: 0;
   z-index: 999;
-
-  &:checked ~ .menu {
-    right: 0;
-    transition: all 0.3s ease;
-  }
 }
 
 .hamburger-icon {
@@ -154,10 +141,13 @@
   @include fullWidthHeight;
   position: fixed;
   top: 0;
-  right: -150%;
+  bottom: 0;
+  right: -100%;
   padding: 60px 40px;
   overflow: hidden;
   background-color: hsl(7, 59%, 38%);
+  opacity: 0;
+  z-index: 98;
   transition: all 0.3s ease;
 
   ul {
@@ -177,7 +167,7 @@
 
       &:hover,
       &:active {
-        box-shadow: 0 5px 15px -3px hsla(0, 0%, 0%, 0.45);
+        box-shadow: 0 5px 15px -3px hsla(0, 0%, 0%, 0.75);
       }
     }
 
@@ -191,7 +181,7 @@
 
       &:hover,
       &:focus {
-        background-color: hsla(0, 0%, 100%, 0.15);
+        background-color: hsl(0, 0%, 0%);
       }
 
       span {
@@ -204,14 +194,11 @@
       }
     }
   }
+}
 
-  & > div {
-    @include flex(row, center, center);
-
-    a {
-      @include socialIcons;
-    }
-  }
+.menu__active {
+  opacity: 1;
+  right: 0;
 }
 
 .nav-item-icon {
