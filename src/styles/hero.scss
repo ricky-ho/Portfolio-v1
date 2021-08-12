@@ -8,6 +8,7 @@
   max-height: 1080px;
   padding-top: 25px;
   padding-bottom: 25px;
+  scroll-margin-top: calc(var(--header-height));
 }
 
 .hero__overlay {

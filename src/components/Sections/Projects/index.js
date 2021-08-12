@@ -1,6 +1,5 @@
 import * as React from "react"
 import { FaGithub } from "react-icons/fa"
-import { BiLinkExternal } from "react-icons/bi"
 
 import "../../../styles/projects.scss"
 
@@ -10,11 +9,13 @@ const Projects = () => {
       <div className="projects__inner">
         <div className="section__header">
           <h2>Projects</h2>
+          <p>Here are some of the latest projects that I have worked on</p>
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
+            <div className="project__img-overlay"></div>
             <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
+              src="https://res.cloudinary.com/ricky-ho/image/upload/q_100/v1626305790/Covid-19/covid-ss1_c4maaf.png"
               alt="sample image"
             />
           </div>
@@ -40,28 +41,29 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={25} />
+                <FaGithub size={20} />
               </a>
               <a
                 href="https://statistics-covid19.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={25} />
+                VIEW LIVE
               </a>
             </div>
           </div>
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
+            <div className="project__img-overlay"></div>
             <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
-              alt="sample image"
+              src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90,w_650/v1628474149/Stocks%20Search/app-screenshot_erjcte.jpg"
+              alt="React Stocks Search"
             />
           </div>
           <div className="card__inner">
             <div className="card__header">
-              <h3>Stocks Search</h3>
+              <h3>React Stocks Search</h3>
             </div>
             <p>
               A stock market inspired, mobile-responsive, web application that
@@ -84,23 +86,24 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={25} />
+                <FaGithub size={20} />
               </a>
               <a
                 href="https://reactstocksearch.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={25} />
+                View Live
               </a>
             </div>
           </div>
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
+            <div className="project__img-overlay"></div>
             <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
-              alt="sample image"
+              src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90,w_650/v1628474465/Omomo/omomo-hero_qes9mh.jpg"
+              alt="Omomo Clone"
             />
           </div>
           <div className="card__inner">
@@ -115,6 +118,7 @@ const Projects = () => {
             </p>
             <ul>
               <li>React</li>
+              <li>React Router</li>
               <li>JavaScript</li>
               <li>CSS</li>
               <li>Netlify</li>
@@ -125,14 +129,14 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={25} />
+                <FaGithub size={20} />
               </a>
               <a
                 href="https://omomoteashoppeclone.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLinkExternal size={25} />
+                View Live
               </a>
             </div>
           </div>

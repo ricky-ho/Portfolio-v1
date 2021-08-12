@@ -18,17 +18,17 @@
   --bg-secondary: hsl(0, 0%, 15%);
   --gray: hsl(0, 0%, 60%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
-  --font-body: "Open Sans", Arial, sans-serif;
+  --font-body: "Poppins", Arial, sans-serif;
   --fontsize-xs: 0.7rem;
   --fontsize-s: 0.85rem;
   --fontsize-m: 1.25rem;
   --fontsize-l: 1.5rem;
   --fontsize-xl: 2rem;
   --fontsize-xxl: 2.5rem;
-  --header-height: 100px;
+  --header-height: 90px;
   --sectionPaddingTop: 90px;
   --sectionPaddingSides: 25px;
-  --sectionPaddingBottom: 50px;
+  --sectionPaddingBottom: 90px;
 }
 
 #root {
@@ -58,6 +58,7 @@ section {
   padding-right: var(--sectionPaddingSides);
   padding-bottom: var(--sectionPaddingBottom);
   padding-left: var(--sectionPaddingSides);
+  scroll-margin-top: 2rem;
 }
 
 .section__header {
@@ -69,10 +70,9 @@ section {
     position: relative;
     font-size: var(--fontsize-l);
     font-family: var(--font-headers);
-    font-weight: normal;
     color: var(--primary);
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 
     &::after {
       position: absolute;
@@ -83,6 +83,41 @@ section {
       height: 3px;
       background-color: var(--secondary);
     }
+  }
+
+  p {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--gray);
+  }
+}
+
+.contact__header {
+  @include flex(column, flex-start, flex-start);
+  @include fullWidthHeight;
+
+  h2 {
+    position: relative;
+    font-family: var(--font-headers);
+    font-size: var(--fontsize-l);
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--gray);
   }
 }
 
@@ -103,10 +138,6 @@ a {
   section {
     --sectionPaddingSides: 50px;
   }
-
-  section {
-    --sectionPaddingBottom: 75px;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -117,14 +148,12 @@ a {
 
 @media screen and (min-width: 1080px) {
   #hero,
-  #about,
   #skills {
     padding-left: 0;
     padding-right: 0;
   }
 
   .hero__inner,
-  .about__inner,
   .skills__inner {
     padding-left: var(--sectionPaddingSides);
     padding-right: var(--sectionPaddingSides);
@@ -132,5 +161,12 @@ a {
 
   .section__header h2 {
     font-size: var(--fontsize-xl);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  section {
+    --sectionPaddingTop: 125px;
+    --sectionPaddingBottom: 125px;
   }
 }

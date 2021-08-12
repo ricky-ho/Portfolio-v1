@@ -6,10 +6,13 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 /* 
   TO DO:
     - Add resume link in Hero section
-    - Add animation effects to sections
     - Make Project images more clear/HD
-    - Change Project description and About Me
-    - Prevent scrolling when mobile nav is open
+    - Change copywriting for About Me, Projects, and Hero
+
+  FUTURE ADD-ONS:
+    - Smooth scrolling
+    - Highlight the section in header that is in view
+    - Add animation effects to sections
 */
 
 const IndexPage = () => (

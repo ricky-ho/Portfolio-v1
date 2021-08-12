@@ -3,19 +3,6 @@
 #about {
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
-  z-index: 3;
-
-  &::after {
-    @include fullWidthHeight;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    background: var(--bg-primary);
-    transform-origin: left bottom;
-    transform: skewY(5deg);
-    z-index: -1;
-  }
 }
 
 .about__inner {
@@ -31,7 +18,7 @@
 
 .about-text p {
   text-align: left;
-  max-width: 100ch;
+  max-width: 90ch;
   color: var(--primary);
   margin-bottom: 15px;
   font-size: 1rem;

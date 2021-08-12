@@ -4,8 +4,8 @@ import "../../../styles/about.scss"
 
 const About = () => {
   return (
-    <section id="about">
-      <div className="about__inner container">
+    <section id="about" className="container">
+      <div className="about__inner">
         <div className="section__header">
           <h2>About</h2>
         </div>

@@ -1,38 +1,22 @@
 @import "./mixins";
 
 #contact {
-  @include flex(row, center);
-  @include fullWidthHeight;
-  background-color: var(--bg-primary);
-  z-index: 1;
-}
-
-.contact__inner {
-  @include flex(column, center, center);
-  width: 100%;
-  margin-top: 5rem;
-
-  p {
-    text-align: center;
-    font-family: var(--body-font);
-  }
-}
-
-.contact__card {
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
-  position: relative;
-  text-align: center;
-  padding: 1.5rem 2rem;
-  padding-bottom: 100px;
-  border-radius: 5px;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
+}
+
+.contact__header {
+  @include flex(column, center, flex-start);
+  @include fullWidthHeight;
 
   h2 {
     position: relative;
+    font-family: var(--font-headers);
     font-size: var(--fontsize-l);
     color: var(--primary);
     letter-spacing: 1px;
+    text-transform: uppercase;
     margin-bottom: 2rem;
 
     &::after {
@@ -45,56 +29,35 @@
       background-color: var(--secondary);
     }
   }
+
+  p {
+    font-size: 1rem;
+    color: var(--gray);
+  }
 }
 
-.contact__options {
-  @include flex(column, flex-start, center);
-  @include fullWidthHeight;
+.contact__inner {
+  @include flex(column, center, center);
+  width: 100%;
 
-  ul {
-    list-style: none;
-  }
-
-  li {
-    display: flex;
-    margin-bottom: 5px;
-
-    span {
-      color: var(--secondary);
-      margin-right: 10px;
-    }
-
-    a {
-      font-family: inherit;
-      color: var(--gray);
-      font-family: var(--fontsize-xs);
-      text-align: left;
-
-      &:hover,
-      &:focus {
-        color: var(--primary);
-      }
-    }
+  p {
+    text-align: center;
+    font-family: var(--body-font);
   }
 }
 
 .contact__form-wrap {
-  @include flex(row, center);
-  position: relative;
-  top: -5em;
+  @include flex(column, flex-start, center);
   width: 100%;
-}
-
-.form-wrap__inner {
-  width: 85%;
-  padding: 10px 20px 20px 20px;
+  padding: 25px 0;
   border-radius: 5px;
+  margin-bottom: 4rem;
   background: var(--secondary);
   box-shadow: 0 3px 20px -3px hsla(0, 0%, 0%, 0.5);
 
   form {
     @include flex(column, flex-start, center);
-    width: 100%;
+    width: 90%;
     background-color: inherit;
 
     input,
@@ -117,8 +80,9 @@
       font-family: inherit;
       outline: none;
       border: none;
-      padding: 10px 15px;
-      border-radius: 25px;
+      padding: 15px;
+      width: 100%;
+      border-radius: 5px;
       color: hsl(0, 0%, 100%);
       background-color: hsl(0, 0%, 0%);
       transition: all 0.2s ease;
@@ -126,7 +90,7 @@
       &:hover,
       &:focus {
         cursor: pointer;
-        transform: scale(1.03);
+        transform: scale(1.01);
         box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
       }
     }
@@ -146,43 +110,71 @@
   }
 }
 
+.contact__links {
+  @include fullWidthHeight;
+  background-color: inherit;
+}
+
+.links__wrap {
+  @include flex(column, flex-start, flex-start);
+  @include fullWidthHeight;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    @include flex(column);
+    margin-bottom: 2rem;
+
+    h4 {
+      @include flex(row, flex-start, center);
+      font-size: var(--fontsize-m);
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    span {
+      @include flex(row, flex-start, center);
+      color: var(--secondary);
+      margin-left: 0.5em;
+    }
+
+    a {
+      font-family: inherit;
+      color: var(--gray);
+      font-family: var(--fontsize-xs);
+      text-align: left;
+
+      &:hover,
+      &:focus {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
 /* MEDIA QUERIES */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .contact__inner {
     @include flex(row, flex-start);
     @include fullWidthHeight;
     gap: 3rem;
   }
 
-  .contact__card {
+  .contact__links {
     flex: 1;
-    align-items: flex-start;
-    background: inherit;
-    padding: 0;
-  }
-
-  .contact__options {
-    align-items: flex-start;
   }
 
   .contact__form-wrap {
     flex: 2;
-    position: unset;
-
-    .form-wrap__inner {
-      width: 100%;
-    }
+    margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 900px) {
-  #contact {
-    padding-top: clamp(90px, 10%, 200px);
-  }
-
-  .form-wrap__inner {
-    padding: 1rem 2rem;
-
+  .contact__form-wrap {
     form input,
     form textarea {
       font-size: 1rem;
@@ -193,7 +185,10 @@
 }
 
 @media screen and (min-width: 1080px) {
-  .contact__card h2 {
+  .contact__inner {
+    gap: 4rem;
+  }
+  .contact__header h2 {
     font-size: var(--fontsize-xl);
     margin-bottom: 3rem;
   }

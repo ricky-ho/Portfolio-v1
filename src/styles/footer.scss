@@ -7,9 +7,9 @@ footer {
 }
 
 .footer__inner {
-  @include flex(column, flex-end, center);
+  @include flex(row, center, flex-end);
   position: relative;
-  padding: 10px 0;
+  padding: 25px 0;
 
   p {
     text-align: center;
@@ -25,32 +25,5 @@ footer {
         color: var(--primary);
       }
     }
-  }
-}
-
-.footer__socials {
-  @include flex(row, center, flex-end);
-  margin-bottom: 25px;
-
-  a {
-    @include socialIcons;
-  }
-}
-
-/* MEDIA QUERIES */
-@media screen and (min-width: 768px) {
-  footer {
-    height: 125px;
-  }
-
-  .footer__inner {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 15px 0;
-  }
-
-  .footer__socials {
-    margin-bottom: 0;
   }
 }

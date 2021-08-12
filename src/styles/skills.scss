@@ -4,19 +4,6 @@
   @include flex(column, flex-start, center);
   @include fullWidthHeight;
   background-color: var(--bg-secondary);
-  z-index: 2;
-
-  &::after {
-    @include fullWidthHeight;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    background: var(--bg-secondary);
-    transform-origin: left bottom;
-    transform: skewY(5deg);
-    z-index: -1;
-  }
 }
 
 .skills__inner {
@@ -59,11 +46,6 @@
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 900px) {
-  #skills {
-    padding-top: clamp(90px, 10%, 200px);
-    padding-bottom: clamp(90px, 10%, 120px);
-  }
-
   .skills__inner ul {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }

@@ -45,6 +45,9 @@ const DefaultNavMenu = () => {
       <nav className="default-nav">
         <ul>
           <li>
+            <Link to="#hero">Home</Link>
+          </li>
+          <li>
             <Link to="/#projects">Projects</Link>
           </li>
           <li>
