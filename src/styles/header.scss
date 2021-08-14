@@ -158,22 +158,14 @@
 
     li {
       text-align: center;
-      outline: none;
       border: none;
-      border-radius: 10px;
       width: 100%;
-      margin-bottom: 10px;
-      overflow: hidden;
-
-      &:hover,
-      &:active {
-        box-shadow: 0 5px 15px -3px hsla(0, 0%, 0%, 0.75);
-      }
+      margin-bottom: 20px;
     }
 
     a {
-      position: relative;
       display: block;
+      border-radius: 5px;
       padding: 15px;
       font-size: var(--fontsize-m);
       letter-spacing: 1px;
@@ -182,15 +174,7 @@
       &:hover,
       &:focus {
         background-color: hsl(0, 0%, 0%);
-      }
-
-      span {
-        @include flex(row, flex-start, center);
-
-        position: relative;
-        left: 50%;
-        width: fit-content;
-        transform: translate(-50%);
+        box-shadow: 0 5px 15px -3px hsla(0, 0%, 0%, 0.75);
       }
     }
   }

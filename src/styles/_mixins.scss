@@ -15,8 +15,13 @@
   padding: 0.5rem;
   border-radius: 50%;
   color: hsl(0, 0%, 100%);
-  background-color: hsl(7, 69%, 54%);
+  background-color: hsl(0, 0%, 0%);
   transition: all 0.2s ease-in;
+
+  & > svg {
+    width: 15px;
+    height: 15px;
+  }
 
   & + a {
     margin-left: 15px;

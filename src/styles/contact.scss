@@ -101,6 +101,12 @@
   @include flex(column, flex-start, center);
   margin-bottom: 20px;
 
+  & > svg {
+    width: 75px;
+    height: 75px;
+    color: hsl(0, 0%, 100%);
+  }
+
   & > div span {
     display: inline-flex;
     align-items: center;
@@ -136,9 +142,14 @@
     }
 
     span {
-      @include flex(row, flex-start, center);
       color: var(--secondary);
       margin-left: 0.5em;
+
+      & > svg {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+      }
     }
 
     a {

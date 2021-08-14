@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "gatsby"
-import { BsPerson, BsListCheck, BsBriefcase } from "react-icons/bs"
-import { FiPhone } from "react-icons/fi"
 import { Logo } from "../../assets"
+import { navLinks } from "../../config"
 
 import "../../styles/header.scss"
 
@@ -44,21 +43,13 @@ const DefaultNavMenu = () => {
     <>
       <nav className="default-nav">
         <ul>
-          <li>
-            <Link to="#hero">Home</Link>
-          </li>
-          <li>
-            <Link to="/#projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/#about">About</Link>
-          </li>
-          <li>
-            <Link to="/#skills">Skills</Link>
-          </li>
-          <li>
-            <Link to="/#contact">Contact</Link>
-          </li>
+          {navLinks.map((link, index) => {
+            return (
+              <li key={index}>
+                <Link to={link.url}>{link.name}</Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </>
@@ -83,38 +74,15 @@ const MobileNavMenu = () => {
       </div>
       <nav className={`menu ${isActive ? "menu__active" : ""}`}>
         <ul>
-          <li>
-            <Link to="/#projects" onClick={() => toggleMenu()}>
-              <span>
-                <BsBriefcase className="nav-item-icon" size={20} />
-                Projects
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/#about" onClick={() => toggleMenu()}>
-              <span>
-                <BsPerson className="nav-item-icon" size={20} />
-                About
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/#skills" onClick={() => toggleMenu()}>
-              <span>
-                <BsListCheck className="nav-item-icon" size={20} />
-                Skills
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/#contact" onClick={() => toggleMenu()}>
-              <span>
-                <FiPhone className="nav-item-icon" size={20} />
-                Contact
-              </span>
-            </Link>
-          </li>
+          {navLinks.map((link, index) => {
+            return (
+              <li key={index}>
+                <Link to={link.url} onClick={() => toggleMenu()}>
+                  {link.name}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </>

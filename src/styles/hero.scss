@@ -41,6 +41,7 @@
     font-size: clamp(var(--fontsize-xs), 2vw, 1rem);
     font-weight: normal;
     color: var(--primary);
+    text-transform: uppercase;
 
     span {
       color: var(--secondary);
@@ -65,6 +66,7 @@
     font-size: clamp(var(--fontsize-m), 3.5vw, var(--fontsize-xxl));
     color: var(--primary);
     line-height: 150%;
+    text-transform: uppercase;
   }
 
   span {
@@ -75,6 +77,7 @@
 .description {
   font-size: clamp(var(--fontsize-xs), 2vw, 1rem);
   color: var(--primary);
+  text-transform: uppercase;
 
   span {
     color: var(--secondary);
@@ -97,12 +100,13 @@
     font-size: var(--fontsize-s);
     letter-spacing: 1px;
     text-decoration: none;
+    vertical-align: middle;
     transition: all 0.2s ease;
 
     &:hover,
     &:focus {
       transform: translateY(-3px);
-      box-shadow: 0 3px 15px 0 hsla(7, 69%, 54%, 0.8),
+      box-shadow: 0 0 15px 0 hsla(7, 69%, 54%, 0.8),
         0 0 15px hsla(0, 0%, 0%, 0.75);
     }
   }
@@ -110,14 +114,14 @@
   :first-child {
     color: var(--primary);
     background-color: var(--secondary);
-    padding: 0.5em 1em 0.7em 1em;
+    padding: 0.5em 1em;
     margin-right: 15px;
   }
 
   :nth-child(2) {
     color: var(--secondary);
     border: 1px solid var(--secondary);
-    padding: 0.5em 1em 0.6em 1em;
+    padding: 0.5em 1em;
   }
 }
 

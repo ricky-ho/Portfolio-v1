@@ -1,5 +1,5 @@
 import * as React from "react"
-import { FaGithub } from "react-icons/fa"
+import { Icon } from "../../Icons"
 
 import "../../../styles/projects.scss"
 
@@ -13,11 +13,16 @@ const Projects = () => {
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
-            <div className="project__img-overlay"></div>
-            <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/q_100/v1626305790/Covid-19/covid-ss1_c4maaf.png"
-              alt="sample image"
-            />
+            <a
+              href="https://statistics-covid19.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://res.cloudinary.com/ricky-ho/image/upload/q_100/v1626305790/Covid-19/covid-ss1_c4maaf.png"
+                alt="sample image"
+              />
+            </a>
           </div>
           <div className="card__inner">
             <h3>Covid-19 Statistics</h3>
@@ -31,7 +36,6 @@ const Projects = () => {
             <ul>
               <li>React</li>
               <li>Recharts.js</li>
-              <li>JavaScript</li>
               <li>SCSS</li>
               <li>Netlify</li>
             </ul>
@@ -41,7 +45,7 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={20} />
+                <Icon name="Github" />
               </a>
               <a
                 href="https://statistics-covid19.netlify.app/"
@@ -55,11 +59,16 @@ const Projects = () => {
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
-            <div className="project__img-overlay"></div>
-            <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90,w_650/v1628474149/Stocks%20Search/app-screenshot_erjcte.jpg"
-              alt="React Stocks Search"
-            />
+            <a
+              href="https://reactstocksearch.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://res.cloudinary.com/ricky-ho/image/upload/v1628835882/Stocks%20Search/stocksearch_1280.png"
+                alt="React Stocks Search"
+              />
+            </a>
           </div>
           <div className="card__inner">
             <div className="card__header">
@@ -74,11 +83,9 @@ const Projects = () => {
             </p>
             <ul>
               <li>React</li>
-              <li>ApexCharts.js</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
-              <li>Netlify</li>
               <li>IEXCloud API</li>
+              <li>ApexCharts.js</li>
+              <li>Netlify</li>
             </ul>
             <div className="project-links">
               <a
@@ -86,7 +93,7 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={20} />
+                <Icon name="Github" />
               </a>
               <a
                 href="https://reactstocksearch.netlify.app/"
@@ -100,11 +107,16 @@ const Projects = () => {
         </div>
         <div className="project-card">
           <div className="project__img-wrap">
-            <div className="project__img-overlay"></div>
-            <img
-              src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90,w_650/v1628474465/Omomo/omomo-hero_qes9mh.jpg"
-              alt="Omomo Clone"
-            />
+            <a
+              href="https://omomoteashoppeclone.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90/v1628474465/Omomo/omomo-hero_qes9mh.jpg"
+                alt="Omomo Clone"
+              />
+            </a>
           </div>
           <div className="card__inner">
             <div className="card__header">
@@ -119,8 +131,6 @@ const Projects = () => {
             <ul>
               <li>React</li>
               <li>React Router</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
               <li>Netlify</li>
             </ul>
             <div className="project-links">
@@ -129,7 +139,7 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub size={20} />
+                <Icon name="Github" />
               </a>
               <a
                 href="https://omomoteashoppeclone.netlify.app/"

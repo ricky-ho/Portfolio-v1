@@ -5,8 +5,7 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 
 /* 
   TO DO:
-    - Add resume link in Hero section
-    - Make Project images more clear/HD
+    - Add resume link in Hero and Header section
     - Change copywriting for About Me, Projects, and Hero
 
   FUTURE ADD-ONS:

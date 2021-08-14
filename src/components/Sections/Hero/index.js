@@ -1,6 +1,6 @@
 import * as React from "react"
-import { FaLinkedin, FaGithub } from "react-icons/fa"
-import { FiMail } from "react-icons/fi"
+import { Icon } from "../../Icons"
+import { contactLinks } from "../../../config"
 
 import "../../../styles/hero.scss"
 
@@ -38,30 +38,19 @@ const Hero = () => {
         </div>
 
         <div className="socials-container">
-          <a
-            href="https://github.com/ricky-ho"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="https://github.com/ricky-ho"
-          >
-            <FaGithub size={15} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ricky-ho-01/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="https://www.linkedin.com/in/ricky-ho-01"
-          >
-            <FaLinkedin size={15} />
-          </a>
-          <a
-            href="mailto:horicky.cs@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="mailto:horicky.cs@gmail.com"
-          >
-            <FiMail size={15} />
-          </a>
+          {contactLinks.map((link, index) => {
+            return (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={link.url}
+              >
+                <Icon name={link.name} />
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>
