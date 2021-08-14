@@ -1,0 +1,6 @@
+export { default as Icon } from "./icon"
+export { default as IconCircle } from "./circle"
+export { default as IconEmail } from "./email"
+export { default as IconGithub } from "./github"
+export { default as IconLinkedin } from "./linkedin"
+export { default as IconPerson } from "./person"
