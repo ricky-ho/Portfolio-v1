@@ -19,6 +19,8 @@ const Icon = ({ name }) => {
       return <IconPerson />
     case "Circle":
       return <IconCircle />
+    default:
+      return
   }
 }
 

@@ -1,6 +1,4 @@
-import * as React from "react"
-import { FiMail } from "react-icons/fi"
-import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+import React from "react"
 
 import "../../styles/footer.scss"
 
