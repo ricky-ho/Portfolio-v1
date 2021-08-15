@@ -9,6 +9,9 @@
   padding-top: 25px;
   padding-bottom: 25px;
   scroll-margin-top: calc(var(--header-height));
+  scroll-snap-margin-top: calc(
+    var(--header-height)
+  ); /* Safari, iOS Safari 11+ support*/
 }
 
 .hero__overlay {

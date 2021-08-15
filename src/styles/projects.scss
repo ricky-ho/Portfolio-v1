@@ -8,7 +8,8 @@
   @include flex(column, center, flex-start);
 
   width: 100%;
-  padding: 20px;
+  max-width: 700px;
+  padding: 25px;
   border-radius: 5px;
   background: var(--bg-secondary);
   box-shadow: 0 0 30px -10px hsla(0, 0%, 0%, 0.75);
@@ -46,7 +47,7 @@
 }
 
 .card__inner {
-  @include flex(column);
+  @include flex(column, flex-start, flex-start);
   @include fullWidthHeight;
   color: var(--primary);
 
@@ -59,15 +60,20 @@
   }
 
   p {
-    font-size: var(--fontsize-s);
+    font-size: 1rem;
     line-height: 150%;
     margin-bottom: 20px;
+
+    span {
+      color: var(--secondary);
+    }
   }
 
   ul {
     @include flex(row);
     flex-wrap: wrap;
     list-style: none;
+    width: 100%;
     margin-bottom: 20px;
 
     li {
@@ -121,11 +127,16 @@
     h3 {
       font-size: var(--fontsize-l);
     }
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1024px) {
   .project-card {
+    max-width: unset;
     padding: 25px;
     gap: 25px;
 

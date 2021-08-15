@@ -59,6 +59,7 @@ section {
   padding-bottom: var(--sectionPaddingBottom);
   padding-left: var(--sectionPaddingSides);
   scroll-margin-top: 2rem;
+  scroll-snap-margin-top: 2rem; /* Safari 11+, iOS Safari 11+ support */
 }
 
 .section__header {
@@ -123,7 +124,7 @@ section {
 
 .container {
   @include fullWidthHeight;
-  max-width: 1080px;
+  max-width: 1180px;
 }
 
 a {
