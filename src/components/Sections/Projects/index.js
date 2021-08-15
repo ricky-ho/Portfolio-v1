@@ -1,9 +1,33 @@
-import * as React from "react"
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Icon } from "../../Icons"
 
 import "../../../styles/projects.scss"
 
 const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              github
+              live
+              tech
+              title
+              imgURL
+            }
+            id
+            body
+          }
+        }
+      }
+    }
+  `)
+
+  const projects = data.allMdx.edges
+
   return (
     <section id="projects" className="container">
       <div className="projects__inner">
@@ -11,148 +35,42 @@ const Projects = () => {
           <h2>Projects</h2>
           <p>Here are some of the latest projects that I have worked on</p>
         </div>
-        <div className="project-card">
-          <div className="project__img-wrap">
-            <a
-              href="https://statistics-covid19.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://res.cloudinary.com/ricky-ho/image/upload/q_100/v1626305790/Covid-19/covid-ss1_c4maaf.png"
-                alt="sample image"
-              />
-            </a>
-          </div>
-          <div className="card__inner">
-            <h3>Covid-19 Statistics</h3>
-            <p>
-              View the latest Covid-19 statistics including number of cases,
-              deaths, and vaccinations globally or by country as reported by Our
-              World in Data. Users can search for specific countries and can
-              sort the results by specific parameters (e.g alphabetical, number
-              of cases, etc).
-            </p>
-            <ul>
-              <li>React</li>
-              <li>Recharts.js</li>
-              <li>SCSS</li>
-              <li>Netlify</li>
-            </ul>
-            <div className="project-links">
-              <a
-                href="https://github.com/ricky-ho/Covid-19-Statistics"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon name="Github" />
-              </a>
-              <a
-                href="https://statistics-covid19.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                VIEW LIVE
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="project-card">
-          <div className="project__img-wrap">
-            <a
-              href="https://reactstocksearch.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://res.cloudinary.com/ricky-ho/image/upload/v1628835882/Stocks%20Search/stocksearch_1280.png"
-                alt="React Stocks Search"
-              />
-            </a>
-          </div>
-          <div className="card__inner">
-            <div className="card__header">
-              <h3>React Stocks Search</h3>
-            </div>
-            <p>
-              A stock market inspired, mobile-responsive, web application that
-              allows users to search for the latest market data on any public
-              stock listed on the Investors Exchange (IEX). Includes an
-              interactive intraday price movement chart created with
-              ApexCharts.js. All market data is retrieved from IEXCloud API.
-            </p>
-            <ul>
-              <li>React</li>
-              <li>IEXCloud API</li>
-              <li>ApexCharts.js</li>
-              <li>Netlify</li>
-            </ul>
-            <div className="project-links">
-              <a
-                href="https://github.com/ricky-ho/react-stocks-search"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon name="Github" />
-              </a>
-              <a
-                href="https://reactstocksearch.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Live
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="project-card">
-          <div className="project__img-wrap">
-            <a
-              href="https://omomoteashoppeclone.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://res.cloudinary.com/ricky-ho/image/upload/c_scale,q_90/v1628474465/Omomo/omomo-hero_qes9mh.jpg"
-                alt="Omomo Clone"
-              />
-            </a>
-          </div>
-          <div className="card__inner">
-            <div className="card__header">
-              <h3>Omomo-Clone</h3>
-            </div>
-            <p>
-              A front-end, mobile-responsive, ecommerce web application inspired
-              by Omomo Tea Shoppe that allows users to browse and shop online
-              for boba milk tea. Users will be able to modify drink add-ons or
-              options and add or remove items from their shopping cart.
-            </p>
-            <ul>
-              <li>React</li>
-              <li>React Router</li>
-              <li>Netlify</li>
-            </ul>
-            <div className="project-links">
-              <a
-                href="https://github.com/ricky-ho/Omomo-Clone"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon name="Github" />
-              </a>
-              <a
-                href="https://omomoteashoppeclone.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Live
-              </a>
-            </div>
-          </div>
-        </div>
+        {projects.map(({ node }) => {
+          const { frontmatter, id, body } = node
+
+          return <ProjectCard key={id} metadata={frontmatter} content={body} />
+        })}
       </div>
     </section>
+  )
+}
+
+const ProjectCard = ({ metadata, content }) => {
+  return (
+    <div className="project-card">
+      <div className="project__img-wrap">
+        <a href={metadata.live} target="_blank" rel="noopener noreferrer">
+          <img src={metadata.imgURL} alt={metadata.title} />
+        </a>
+      </div>
+      <div className="card__inner">
+        <h3>{metadata.title}</h3>
+        <MDXRenderer>{content}</MDXRenderer>
+        <ul>
+          {metadata.tech.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <div className="project-links">
+          <a href={metadata.github} target="_blank" rel="noopener noreferrer">
+            <Icon name="Github" />
+          </a>
+          <a href={metadata.live} target="_blank" rel="noopener noreferrer">
+            VIEW LIVE
+          </a>
+        </div>
+      </div>
+    </div>
   )
 }
 

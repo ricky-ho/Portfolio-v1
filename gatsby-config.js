@@ -3,9 +3,8 @@ module.exports = {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: `Ricky Ho`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Ricky Ho | Software Developer`,
+    description: `I am a software developer with an emphasis on the front-end. I enjoy creating responsive and interactive web applications and experiences.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,8 +12,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
+        name: `svg`,
+        path: `${__dirname}/src/assets/svg`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -28,7 +41,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/logo.svg`, // This path is relative to the root of the site.
+        icon: `src/assets/logo/logo.svg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -49,5 +62,6 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-mdx`,
   ],
 }
