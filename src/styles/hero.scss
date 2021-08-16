@@ -5,13 +5,10 @@
   @include fullWidthHeight;
   position: relative;
   height: calc(100vh - var(--header-height));
+  min-height: 500px;
   max-height: 1080px;
   padding-top: 25px;
   padding-bottom: 25px;
-  scroll-margin-top: calc(var(--header-height));
-  scroll-snap-margin-top: calc(
-    var(--header-height)
-  ); /* Safari, iOS Safari 11+ support*/
 }
 
 .hero__overlay {

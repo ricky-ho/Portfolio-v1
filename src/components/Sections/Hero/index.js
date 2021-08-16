@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-scroll"
 import { Icon } from "../../Icons"
 import { contactLinks } from "../../../config"
 
@@ -24,9 +25,9 @@ const Hero = () => {
           California.
         </p>
         <div className="cta-container">
-          <a href="#projects" title="View my projects">
+          <Link to="projects" smooth={true} offset={-50} duration={750}>
             My Projects
-          </a>
+          </Link>
           <a
             href="/resume.pdf"
             target="_blank"

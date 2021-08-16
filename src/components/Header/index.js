@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
-import { Link } from "gatsby"
+import { Link } from "react-scroll"
 import { Logo } from "../../assets"
 import { navLinks } from "../../config"
 
@@ -12,6 +12,7 @@ const Header = () => {
   const width = useScreenWidth()
   const useMobileNav = width < MOBILE_THRESHOLD_WIDTH
   const [scrolledToTop, setScrolledToTop] = useState(true)
+  const headerStyle = !scrolledToTop ? "header__shadow" : ""
 
   useEffect(() => {
     const handleScroll = () => setScrolledToTop(window.pageYOffset < 50)
@@ -19,8 +20,6 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const headerStyle = !scrolledToTop ? "header__shadow" : ""
 
   return (
     <header className={`header ${headerStyle}`}>
@@ -39,6 +38,16 @@ const Header = () => {
 }
 
 const DefaultNavMenu = () => {
+  const handleSetActive = to => {
+    const section = document.querySelector(`#${to}`)
+    section.classList.add("section__active")
+  }
+
+  const handleRemoveActive = to => {
+    const section = document.querySelector(`#${to}`)
+    section.classList.remove("section__active")
+  }
+
   return (
     <>
       <nav className="default-nav">
@@ -46,7 +55,9 @@ const DefaultNavMenu = () => {
           {navLinks.map((link, index) => {
             return (
               <li key={index}>
-                <Link to={link.url}>{link.name}</Link>
+                <Link to={link.url} smooth={true} offset={-50} duration={750}>
+                  {link.name}
+                </Link>
               </li>
             )
           })}
@@ -77,7 +88,13 @@ const MobileNavMenu = () => {
           {navLinks.map((link, index) => {
             return (
               <li key={index}>
-                <Link to={link.url} onClick={() => toggleMenu()}>
+                <Link
+                  to={link.url}
+                  smooth={true}
+                  offset={-50}
+                  duration={750}
+                  onClick={() => toggleMenu()}
+                >
                   {link.name}
                 </Link>
               </li>

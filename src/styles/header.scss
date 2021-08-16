@@ -64,24 +64,14 @@
         display: block;
         font-size: 1rem;
         font-family: var(--font-headers);
-        color: hsl(0, 0%, 100%);
         transition: all 0.2s ease;
 
         &:hover,
         &:focus {
-          color: var(--gray);
+          color: var(--secondary);
         }
       }
     }
-
-    // :first-child a {
-    //   color: var(--secondary);
-
-    //   &:hover,
-    //   &:focus {
-    //     color: hsla(7, 59%, 38%, 0.75);
-    //   }
-    // }
   }
 }
 
@@ -177,8 +167,4 @@
 .menu__active {
   opacity: 1;
   right: 0;
-}
-
-.nav-item-icon {
-  margin-right: 20px;
 }

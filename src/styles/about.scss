@@ -7,7 +7,7 @@
 
 .about__inner {
   @include flex(column, center, center);
-  width: 100%;
+  @include fullWidthHeight;
 }
 
 .about__content {

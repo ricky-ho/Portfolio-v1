@@ -26,9 +26,9 @@
   --fontsize-xl: 2rem;
   --fontsize-xxl: 2.5rem;
   --header-height: 90px;
-  --sectionPaddingTop: 90px;
+  --sectionPaddingTop: 100px;
   --sectionPaddingSides: 25px;
-  --sectionPaddingBottom: 90px;
+  --sectionPaddingBottom: 100px;
 }
 
 #root {
@@ -58,8 +58,6 @@ section {
   padding-right: var(--sectionPaddingSides);
   padding-bottom: var(--sectionPaddingBottom);
   padding-left: var(--sectionPaddingSides);
-  scroll-margin-top: 2rem;
-  scroll-snap-margin-top: 2rem; /* Safari 11+, iOS Safari 11+ support */
 }
 
 .section__header {
@@ -167,7 +165,7 @@ a {
 
 @media screen and (min-width: 1440px) {
   section {
-    --sectionPaddingTop: 125px;
-    --sectionPaddingBottom: 125px;
+    --sectionPaddingTop: 150px;
+    --sectionPaddingBottom: 150px;
   }
 }
