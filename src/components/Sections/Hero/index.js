@@ -1,30 +1,51 @@
 import React from "react"
 import { Link } from "react-scroll"
+import { useInView } from "react-intersection-observer"
 import { Icon } from "../../Icons"
-import { contactLinks } from "../../../config"
+import { contactLinks, srConfig } from "../../../config"
 
 import "../../../styles/hero.scss"
 
 const Hero = () => {
+  const [ref, inView] = useInView(srConfig.initialOnScreenOptions)
+
   return (
     <section id="hero">
       <div className="hero__overlay"></div>
-      <div className="hero__inner container">
-        <h1>
+      <div ref={ref} className="hero__inner container">
+        <h1
+          data-animation-delay="1"
+          className={`animate ${inView ? "fadeIn" : "initialFadeIn"}`}
+        >
           Hi, I'm <span>Ricky Ho</span>
         </h1>
-        <div className="hero__text">
+        <div
+          data-animation-delay="2"
+          className={`hero__text animate ${
+            inView ? "fadeIn" : "initialFadeIn"
+          }`}
+        >
           <div></div>
           <p>
             I enjoy creating <span>responsive</span> and{" "}
             <span>interactive</span> web applications and experiences
           </p>
         </div>
-        <p className="description">
+        <p
+          data-animation-delay="3"
+          className={`description animate ${
+            inView ? "fadeIn" : "initialFadeIn"
+          }`}
+        >
           I am a <span>Front-End Developer</span> based in San Francisco,
           California.
         </p>
-        <div className="cta-container">
+        <div
+          data-animation-delay="4"
+          className={`cta-container animate ${
+            inView ? "fadeIn" : "initialFadeIn"
+          }`}
+        >
           <Link to="projects" smooth={true} offset={-50} duration={750}>
             My Projects
           </Link>
@@ -38,7 +59,12 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="socials-container">
+        <div
+          data-animation-delay="5"
+          className={`socials-container animate ${
+            inView ? "fadeIn" : "initialFadeIn"
+          }`}
+        >
           {contactLinks.map((link, index) => {
             return (
               <a

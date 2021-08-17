@@ -1,5 +1,6 @@
 module.exports = {
   email: "horicky.cs@gmail.com",
+  mobileThresholdWidth: 700,
   contactLinks: [
     {
       name: "Email",
@@ -32,4 +33,14 @@ module.exports = {
       url: "contact",
     },
   ],
+  srConfig: {
+    initialOnScreenOptions: {
+      threshold: 0,
+      triggerOnce: true,
+    },
+    contentOptions: {
+      threshold: 0.35,
+      triggerOnce: true,
+    },
+  },
 }

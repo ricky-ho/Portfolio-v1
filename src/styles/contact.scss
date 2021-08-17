@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./animations";
 
 #contact {
   @include flex(column, flex-start, center);

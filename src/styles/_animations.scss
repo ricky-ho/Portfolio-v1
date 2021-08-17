@@ -1,0 +1,56 @@
+.animate {
+  --duration: 1s;
+  --opacity-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  --transform-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+
+  transition: opacity var(--duration) var(--opacity-timing-function),
+    transform var(--duration) var(--transform-timing-function);
+}
+
+@for $i from 1 to 10 {
+  [data-animation-delay="#{$i}"] {
+    transition-delay: $i * 0.25s;
+  }
+}
+
+/* Initial Animation States */
+
+.initialFadeIn {
+  opacity: 0;
+}
+
+.initialFadeInUp {
+  @extend .initialFadeIn;
+  transform: translateY(25px);
+}
+
+.initialFadeInDown {
+  @extend .initialFadeIn;
+  transform: translateY(-15px);
+}
+
+.initialFadeInLeft {
+  @extend .initialFadeIn;
+  transform: translateX(-15px);
+}
+
+.initialFadeInRight {
+  @extend .initialFadeIn;
+  transform: translateX(15px);
+}
+
+/* After Animation States */
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeInY {
+  @extend .fadeIn;
+  transform: translateY(0px);
+}
+
+.fadeInX {
+  @extend .fadeIn;
+  transform: translateX(0px);
+}

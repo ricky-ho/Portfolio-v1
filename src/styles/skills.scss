@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./animations";
 
 #skills {
   @include flex(column, flex-start, center);
@@ -12,7 +13,7 @@
 
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 40px;
     width: 100%;
     place-items: center;
@@ -47,6 +48,6 @@
 
 @media screen and (min-width: 900px) {
   .skills__inner ul {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
 }

@@ -1,28 +1,34 @@
 import React, { useState, useEffect } from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "react-scroll"
+import { useInView } from "react-intersection-observer"
 import { Logo } from "../../assets"
-import { navLinks } from "../../config"
+import { mobileThresholdWidth, navLinks, srConfig } from "../../config"
 
 import "../../styles/header.scss"
 
-const MOBILE_THRESHOLD_WIDTH = 700
-
 const Header = () => {
-  const width = useScreenWidth()
-  const useMobileNav = width < MOBILE_THRESHOLD_WIDTH
   const [scrolledToTop, setScrolledToTop] = useState(true)
+  const [ref, inView] = useInView(srConfig.initialOnScreenOptions)
+  const width = useScreenWidth()
+
+  const useMobileNav = width < mobileThresholdWidth
   const headerStyle = !scrolledToTop ? "header__shadow" : ""
 
   useEffect(() => {
-    const handleScroll = () => setScrolledToTop(window.pageYOffset < 50)
+    const handleScroll = () => setScrolledToTop(window.pageYOffset < 30)
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <header className={`header ${headerStyle}`}>
+    <header
+      ref={ref}
+      className={`header ${headerStyle} animate ${
+        inView ? "fadeInDown" : "initialFadeInDown"
+      }`}
+    >
       <div className="header__inner">
         <div className="header__logo-wrap">
           <a href="/">
@@ -30,7 +36,11 @@ const Header = () => {
           </a>
         </div>
         <div className="menu-wrap">
-          {useMobileNav ? <MobileNavMenu /> : <DefaultNavMenu />}
+          {useMobileNav ? (
+            <MobileNavMenu />
+          ) : (
+            <DefaultNavMenu inView={inView} />
+          )}
         </div>
       </div>
     </header>
@@ -38,16 +48,6 @@ const Header = () => {
 }
 
 const DefaultNavMenu = () => {
-  const handleSetActive = to => {
-    const section = document.querySelector(`#${to}`)
-    section.classList.add("section__active")
-  }
-
-  const handleRemoveActive = to => {
-    const section = document.querySelector(`#${to}`)
-    section.classList.remove("section__active")
-  }
-
   return (
     <>
       <nav className="default-nav">
@@ -55,7 +55,12 @@ const DefaultNavMenu = () => {
           {navLinks.map((link, index) => {
             return (
               <li key={index}>
-                <Link to={link.url} smooth={true} offset={-50} duration={750}>
+                <Link
+                  to={link.url}
+                  smooth={"easeOutQuad"}
+                  offset={-50}
+                  duration={500}
+                >
                   {link.name}
                 </Link>
               </li>
@@ -90,9 +95,9 @@ const MobileNavMenu = () => {
               <li key={index}>
                 <Link
                   to={link.url}
-                  smooth={true}
+                  smooth={"easeOutQuad"}
                   offset={-50}
-                  duration={750}
+                  duration={500}
                   onClick={() => toggleMenu()}
                 >
                   {link.name}

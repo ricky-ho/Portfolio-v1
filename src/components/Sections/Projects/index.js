@@ -1,7 +1,9 @@
 import React from "react"
+import { useInView } from "react-intersection-observer"
 import { useStaticQuery, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Icon } from "../../Icons"
+import { srConfig } from "../../../config"
 
 import "../../../styles/projects.scss"
 
@@ -26,10 +28,16 @@ const Projects = () => {
     }
   `)
 
+  const [ref, inView] = useInView(srConfig.contentOptions)
+
   const projects = data.allMdx.edges
 
   return (
-    <section id="projects" className="container">
+    <section
+      ref={ref}
+      id="projects"
+      className={`container animate ${inView ? "fadeInUp" : "initialFadeInUp"}`}
+    >
       <div className="projects__inner">
         <div className="section__header">
           <h2>Projects</h2>
@@ -46,8 +54,18 @@ const Projects = () => {
 }
 
 const ProjectCard = ({ metadata, content }) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  })
+
   return (
-    <div className="project-card">
+    <div
+      ref={ref}
+      className={`project-card animate ${
+        inView ? "fadeInX" : "initialFadeInLeft"
+      }`}
+    >
       <div className="project__img-wrap">
         <a href={metadata.live} target="_blank" rel="noopener noreferrer">
           <img src={metadata.imgURL} alt={metadata.title} />

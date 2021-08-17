@@ -1,12 +1,19 @@
 import React from "react"
+import { useInView } from "react-intersection-observer"
 import { Icon } from "../../Icons"
-import { email, contactLinks } from "../../../config"
+import { email, contactLinks, srConfig } from "../../../config"
 
 import "../../../styles/contact.scss"
 
 const Contact = () => {
+  const [ref, inView] = useInView(srConfig.contentOptions)
+
   return (
-    <section id="contact" className="container">
+    <section
+      ref={ref}
+      id="contact"
+      className={`container animate ${inView ? "fadeInUp" : "initialFadeInUp"}`}
+    >
       <div className="section__header">
         <h2>Get In Touch</h2>
         <p>
@@ -14,16 +21,21 @@ const Contact = () => {
         </p>
       </div>
       <div className="contact__inner">
-        <ContactForm />
-        <ContactLinks />
+        <ContactForm inView={inView} />
+        <ContactLinks inView={inView} />
       </div>
     </section>
   )
 }
 
-const ContactForm = () => {
+const ContactForm = ({ inView }) => {
   return (
-    <div className="contact__form-wrap">
+    <div
+      className={`contact__form-wrap animate ${
+        inView ? "fadeInUp" : "initialFadeInUp"
+      }`}
+      data-animation-delay="1"
+    >
       <div className="form-wrap__header">
         <Icon name="Person" />
         <div>
@@ -48,14 +60,18 @@ const ContactForm = () => {
   )
 }
 
-const ContactLinks = () => {
+const ContactLinks = ({ inView }) => {
   return (
     <div className="contact__links">
       <div className="links__wrap">
         <ul>
           {contactLinks.map((link, index) => {
             return (
-              <li key={index}>
+              <li
+                key={index}
+                className={`animate ${inView ? "fadeInUp" : "initialFadeInUp"}`}
+                data-animation-delay={index + 2}
+              >
                 <h4>
                   {link.name}{" "}
                   <span>

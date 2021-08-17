@@ -1,10 +1,18 @@
 import React from "react"
+import { useInView } from "react-intersection-observer"
+import { srConfig } from "../../../config"
 
 import "../../../styles/about.scss"
 
 const About = () => {
+  const [ref, inView] = useInView(srConfig.contentOptions)
+
   return (
-    <section id="about" className="container">
+    <section
+      ref={ref}
+      id="about"
+      className={`container animate ${inView ? "fadeInUp" : "initialFadeInUp"}`}
+    >
       <div className="about__inner">
         <div className="section__header">
           <h2>About</h2>

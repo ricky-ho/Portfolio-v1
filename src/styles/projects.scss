@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./animations";
 
 .projects__inner {
   @include flex(column, flex-start, center);
@@ -59,7 +60,7 @@
   }
 
   p {
-    font-size: 1rem;
+    font-size: var(--fontsize-s);
     line-height: 150%;
     margin-bottom: 20px;
 
@@ -118,6 +119,11 @@
 }
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 500px) {
+  .card__inner p {
+    font-size: 1rem;
+  }
+}
 
 @media screen and (min-width: 700px) {
   .project-card {
@@ -135,20 +141,14 @@
 
 @media screen and (min-width: 1024px) {
   .project-card {
+    flex-direction: row-reverse;
+    align-items: center;
     max-width: unset;
     padding: 25px;
     gap: 25px;
 
     h3 {
       margin-top: 0;
-    }
-
-    &:nth-of-type(even) {
-      flex-direction: row;
-    }
-
-    &:nth-of-type(odd) {
-      flex-direction: row-reverse;
     }
 
     &:not(:last-child) {

@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./animations";
 
 #about {
   @include flex(column, flex-start, center);
@@ -21,7 +22,7 @@
   max-width: 90ch;
   color: var(--primary);
   margin-bottom: 15px;
-  font-size: 1rem;
+  font-size: var(--fontsize-s);
 }
 
 .about__image-wrap {
@@ -36,6 +37,12 @@
 }
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 500px) {
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (min-width: 850px) {
   .about__content {
     flex-direction: row;
