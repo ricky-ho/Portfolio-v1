@@ -1,6 +1,21 @@
 module.exports = {
   email: "horicky.cs@gmail.com",
   mobileThresholdWidth: 700,
+  skills: [
+    "HTML",
+    "CSS",
+    "SASS",
+    "JavaScript",
+    "React",
+    "Gatsby",
+    "Node.js",
+    "MongoDB",
+    "Git",
+    "Netlify",
+    "Heroku",
+    "Figma",
+    "Python",
+  ],
   contactLinks: [
     {
       name: "Email",

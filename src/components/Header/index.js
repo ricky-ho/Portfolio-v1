@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "react-scroll"
 import { useInView } from "react-intersection-observer"
-import { Logo } from "../../assets"
+import { Logo } from "../Icons"
 import { mobileThresholdWidth, navLinks, srConfig } from "../../config"
 
 import "../../styles/header.scss"
