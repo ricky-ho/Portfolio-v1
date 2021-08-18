@@ -38,11 +38,11 @@ const Projects = () => {
       id="projects"
       className={`container animate ${inView ? "fadeInUp" : "initialFadeInUp"}`}
     >
+      <div className="section__header">
+        <h2>Projects</h2>
+        <p>Here are some of the latest projects that I have worked on</p>
+      </div>
       <div className="projects__inner">
-        <div className="section__header">
-          <h2>Projects</h2>
-          <p>Here are some of the latest projects that I have worked on</p>
-        </div>
         {projects.map(({ node }) => {
           const { frontmatter, id, body } = node
 

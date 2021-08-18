@@ -13,7 +13,7 @@
   padding: 20px;
   border-radius: 5px;
   background: var(--bg-secondary);
-  box-shadow: 0 0 30px -10px hsla(0, 0%, 0%, 0.75);
+  box-shadow: 0 0 35px -15px hsla(0, 0%, 0%, 0.75);
 
   &:not(:last-child) {
     margin-bottom: 3rem;
@@ -22,6 +22,7 @@
 
 .project__img-wrap {
   @include fullWidthHeight;
+  margin-bottom: 20px;
   overflow: hidden;
 
   a {
@@ -51,18 +52,21 @@
   @include fullWidthHeight;
   color: var(--primary);
 
+  & > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+
   h3 {
     font-size: 1rem;
     color: var(--secondary);
     letter-spacing: 1px;
-    margin: 20px 0;
+    margin-bottom: 20px;
     text-transform: uppercase;
   }
 
   p {
     font-size: var(--fontsize-s);
     line-height: 150%;
-    margin-bottom: 20px;
 
     span {
       color: var(--secondary);
@@ -74,7 +78,6 @@
     flex-wrap: wrap;
     list-style: none;
     width: 100%;
-    margin-bottom: 20px;
 
     li {
       font-size: var(--fontsize-s);
@@ -112,8 +115,6 @@
     &:hover,
     &:focus {
       color: hsl(0, 0%, 100%);
-      box-shadow: 0 0 15px 0 hsla(7, 69%, 54%, 0.8),
-        0 0 15px hsla(0, 0%, 0%, 0.75);
     }
   }
 }
@@ -137,7 +138,7 @@
 
 @media screen and (min-width: 700px) {
   .project-card {
-    padding: 2.5rem;
+    padding: 30px;
 
     h3 {
       font-size: var(--fontsize-l);
@@ -152,21 +153,34 @@
 @media screen and (min-width: 1024px) {
   .project-card {
     flex-direction: row-reverse;
-    align-items: center;
+    justify-content: flex-end;
     max-width: unset;
-    padding: 25px;
-    gap: 25px;
-
-    h3 {
-      margin-top: 0;
-    }
+    padding: 20px;
+    gap: 20px;
 
     &:not(:last-child) {
       margin-bottom: 5rem;
     }
   }
 
-  .project__img-wrap img {
-    max-height: 275px;
+  .card__inner {
+    p {
+      font-size: var(--fontsize-s);
+      line-height: 160%;
+    }
+
+    & > :not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .project__img-wrap {
+    max-width: 550px;
+    max-height: 320px;
+    margin: 0;
+
+    // img {
+    //   object-fit: cover;
+    // }
   }
 }

@@ -13,14 +13,14 @@
 
 :root {
   --primary: hsl(0, 0%, 100%);
-  --secondary: hsl(7, 69%, 54%);
+  --secondary: hsl(7, 69%, 55%);
   --bg-primary: hsl(0, 0%, 10%);
   --bg-secondary: hsl(0, 0%, 15%);
   --gray: hsl(0, 0%, 60%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
   --font-body: "Poppins", Arial, sans-serif;
   --fontsize-xs: 0.7rem;
-  --fontsize-s: 0.85rem;
+  --fontsize-s: 0.9rem;
   --fontsize-m: 1.25rem;
   --fontsize-l: 1.5rem;
   --fontsize-xl: 2rem;
@@ -165,7 +165,7 @@ a {
 
 @media screen and (min-width: 1440px) {
   section {
-    --sectionPaddingTop: 150px;
-    --sectionPaddingBottom: 150px;
+    --sectionPaddingTop: 125px;
+    --sectionPaddingBottom: 125px;
   }
 }
