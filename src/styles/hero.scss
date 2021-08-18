@@ -64,7 +64,7 @@
   }
 
   p {
-    font-size: clamp(var(--fontsize-m), 3.5vw, var(--fontsize-xxl));
+    font-size: clamp(1rem, 3.5vw, var(--fontsize-xxl));
     color: var(--primary);
     text-transform: uppercase;
   }

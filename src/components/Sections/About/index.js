@@ -5,7 +5,7 @@ import { srConfig } from "../../../config"
 import "../../../styles/about.scss"
 
 const About = () => {
-  const [ref, inView] = useInView(srConfig.contentOptions)
+  const [ref, inView] = useInView(srConfig.defaultOptions)
 
   return (
     <section

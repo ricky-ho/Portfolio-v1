@@ -28,7 +28,7 @@ const Projects = () => {
     }
   `)
 
-  const [ref, inView] = useInView(srConfig.contentOptions)
+  const [ref, inView] = useInView(srConfig.projectOptions)
 
   const projects = data.allMdx.edges
 
@@ -54,10 +54,7 @@ const Projects = () => {
 }
 
 const ProjectCard = ({ metadata, content }) => {
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  })
+  const [ref, inView] = useInView(srConfig.projectOptions)
 
   return (
     <div

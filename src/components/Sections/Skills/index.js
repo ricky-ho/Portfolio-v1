@@ -6,7 +6,7 @@ import { skills, srConfig } from "../../../config"
 import "../../../styles/skills.scss"
 
 const Skills = () => {
-  const [ref, inView] = useInView(srConfig.contentOptions)
+  const [ref, inView] = useInView(srConfig.defaultOptions)
 
   return (
     <section ref={ref} id="skills">
@@ -24,7 +24,7 @@ const Skills = () => {
               <li
                 key={index}
                 className={`animate ${inView ? "fadeIn" : "initialFadeIn"}`}
-                data-animation-delay={Math.floor(index / 2) + 1}
+                data-animation-delay={Math.floor(index / 3) + 1}
               >
                 <p>{skill}</p>
                 <Icon name={skill} />

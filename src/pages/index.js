@@ -8,11 +8,6 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
   TO DO:
     - Add resume link in Hero and Header section
     - Change copywriting for About Me and Hero
-
-  FUTURE ADD-ONS:
-    - Smooth scrolling
-    - Highlight the section in header that is in view
-    - Add animation effects to sections
 */
 
 const IndexPage = () => {

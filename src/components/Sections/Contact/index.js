@@ -6,7 +6,7 @@ import { email, contactLinks, srConfig } from "../../../config"
 import "../../../styles/contact.scss"
 
 const Contact = () => {
-  const [ref, inView] = useInView(srConfig.contentOptions)
+  const [ref, inView] = useInView(srConfig.defaultOptions)
 
   return (
     <section
