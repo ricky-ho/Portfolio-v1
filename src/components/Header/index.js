@@ -12,7 +12,7 @@ const Header = () => {
   const [ref, inView] = useInView(srConfig.initialOnScreenOptions)
   const width = useScreenWidth()
 
-  const useMobileNav = width < mobileThresholdWidth
+  const useMobileNav = width <= mobileThresholdWidth
   const headerStyle = !scrolledToTop ? "header__shadow" : ""
 
   useEffect(() => {
@@ -66,6 +66,11 @@ const DefaultNavMenu = () => {
               </li>
             )
           })}
+          <li>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
     </>

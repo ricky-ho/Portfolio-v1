@@ -1,6 +1,6 @@
 module.exports = {
   email: "horicky.cs@gmail.com",
-  mobileThresholdWidth: 700,
+  mobileThresholdWidth: 768,
   skills: [
     "HTML",
     "CSS",

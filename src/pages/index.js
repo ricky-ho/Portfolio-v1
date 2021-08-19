@@ -6,8 +6,9 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 
 /* 
   TO DO:
-    - Add resume link in Hero and Header section
-    - Change copywriting for About Me and Hero
+    - Add resume link to pdf 
+    - Change copywriting for About Me and Hero section
+    - Add an image in About Me Section
 */
 
 const IndexPage = () => {

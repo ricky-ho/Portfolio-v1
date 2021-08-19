@@ -11,6 +11,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: hsl(0, 0%, 100%);
   --secondary: hsl(7, 69%, 55%);
@@ -19,7 +23,7 @@
   --gray: hsl(0, 0%, 60%);
   --font-headers: "Montserrat", Helvetica, sans-serif;
   --font-body: "Poppins", Arial, sans-serif;
-  --fontsize-xs: 0.7rem;
+  --fontsize-xs: 0.75rem;
   --fontsize-s: 0.9rem;
   --fontsize-m: 1.25rem;
   --fontsize-l: 1.5rem;
@@ -34,7 +38,7 @@
 #root {
   @include flex(column);
   @include fullWidthHeight;
-
+  min-width: 320px;
   font-family: var(--font-body);
   background: var(--bg-primary);
 }

@@ -27,8 +27,8 @@ const Hero = () => {
         >
           <div></div>
           <p>
-            I enjoy creating <span>responsive</span> and{" "}
-            <span>interactive</span> web applications and experiences
+            I create <span>responsive</span> and <span>interactive</span> web
+            applications and experiences
           </p>
         </div>
         <p
