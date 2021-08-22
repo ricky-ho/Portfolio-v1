@@ -57,9 +57,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require("node-sass"),
-      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
