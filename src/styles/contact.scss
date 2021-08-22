@@ -108,6 +108,8 @@ form {
   width: 100%;
 
   label {
+    pointer-events: none;
+    cursor: text;
     position: absolute;
     top: calc(1rem + 0.5em);
     left: 10px;
@@ -120,7 +122,7 @@ form {
 
   .label-outer {
     color: var(--primary);
-    transform: translate(-0.5em, -3.25em);
+    transform: translate(-0.5em, -3.15em);
   }
 
   input,
@@ -140,7 +142,7 @@ form {
 
       & + label {
         color: var(--primary);
-        transform: translate(-0.5em, -3.25em);
+        transform: translate(-0.5em, -3.15em);
       }
     }
   }

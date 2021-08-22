@@ -27,7 +27,7 @@ module.exports = {
     },
     {
       name: "Linkedin",
-      url: "https://www.linkedin.com/in/ricky-ho-01",
+      url: "https://www.linkedin.com/in/riho-1/",
     },
   ],
   navLinks: [
