@@ -55,52 +55,11 @@
   margin-bottom: 4rem;
   background: var(--secondary);
   box-shadow: 0 3px 20px -3px hsla(0, 0%, 0%, 0.5);
-
-  form {
-    @include flex(column, flex-start, center);
-    width: 90%;
-    background-color: inherit;
-
-    input,
-    textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: var(--fontsize-s);
-      border-radius: 5px;
-      border: 2px solid var(--secondary);
-      padding: 8px;
-      margin-bottom: 15px;
-      resize: none;
-
-      &:focus {
-        border: 2px solid hsl(0, 0%, 0%);
-      }
-    }
-
-    button {
-      font-family: inherit;
-      outline: none;
-      border: none;
-      padding: 15px;
-      width: 100%;
-      border-radius: 5px;
-      color: hsl(0, 0%, 100%);
-      background-color: hsl(0, 0%, 0%);
-      transition: all 0.2s ease;
-
-      &:hover,
-      &:focus {
-        cursor: pointer;
-        transform: scale(1.01);
-        box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
-      }
-    }
-  }
 }
 
 .form-wrap__header {
   @include flex(column, flex-start, center);
-  margin-bottom: 20px;
+  margin-bottom: 2.5rem;
 
   & > svg {
     width: 75px;
@@ -114,6 +73,89 @@
     color: var(--primary);
     font-size: var(--fontsize-s);
     margin-left: 5px;
+  }
+}
+
+form {
+  @include flex(column, flex-start, flex-start);
+  width: 90%;
+  font-size: var(--fontsize-s);
+  background-color: inherit;
+
+  button {
+    font-family: inherit;
+    outline: none;
+    border: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 0%);
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.01);
+      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+    }
+  }
+}
+
+.form-item {
+  position: relative;
+  width: 100%;
+
+  label {
+    position: absolute;
+    top: calc(1rem + 0.5em);
+    left: 10px;
+    color: hsl(0, 0%, 49%);
+    font-size: inherit;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all 0.2s ease-out;
+  }
+
+  .label-outer {
+    color: var(--primary);
+    transform: translate(-0.5em, -3.25em);
+  }
+
+  input,
+  textarea {
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 5px;
+    border: 2px solid var(--secondary);
+    padding: 10px;
+    margin-bottom: 40px;
+    resize: none;
+
+    &:focus {
+      border: 2px solid hsl(0, 0%, 0%);
+
+      & + label {
+        color: var(--primary);
+        transform: translate(-0.5em, -3.25em);
+      }
+    }
+  }
+}
+
+.submit-message {
+  width: 100%;
+
+  p {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    font-size: var(--fontsize-s);
+    background: hsla(0, 0%, 0%, 0.2);
   }
 }
 
@@ -185,23 +227,22 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .contact__form-wrap {
-    form input,
-    form textarea {
-      font-size: 1rem;
-      padding: 10px;
-      margin-bottom: 1.5rem;
-    }
-  }
-}
-
 @media screen and (min-width: 1080px) {
   .contact__inner {
     gap: 4rem;
   }
+
   .contact__header h2 {
     font-size: var(--fontsize-xl);
     margin-bottom: 3rem;
+  }
+
+  form {
+    font-size: 1rem;
+
+    input,
+    textarea {
+      margin-bottom: 50px;
+    }
   }
 }

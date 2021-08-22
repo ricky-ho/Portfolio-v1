@@ -1,10 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   flags: {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: `Ricky Ho | Software Developer`,
-    description: `I am a software developer with an emphasis on the front-end. I enjoy creating responsive and interactive web applications and experiences.`,
+    title: `Ricky Ho | Front-End Software Developer`,
+    description: `I am a front-end developer and an aspiring full-stack software developer. I enjoy creating responsive and interactive web applications and experiences.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

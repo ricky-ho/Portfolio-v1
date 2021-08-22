@@ -1,4 +1,5 @@
 import React from "react"
+import ContactForm from "./ContactForm"
 import { useInView } from "react-intersection-observer"
 import { Icon } from "../../Icons"
 import { email, contactLinks, srConfig } from "../../../config"
@@ -25,38 +26,6 @@ const Contact = () => {
         <ContactLinks inView={inView} />
       </div>
     </section>
-  )
-}
-
-const ContactForm = ({ inView }) => {
-  return (
-    <div
-      className={`contact__form-wrap animate ${
-        inView ? "fadeInUp" : "initialFadeInUp"
-      }`}
-      data-animation-delay="1"
-    >
-      <div className="form-wrap__header">
-        <Icon name="Person" />
-        <div>
-          <Icon name="Circle" />
-          <span>Active</span>
-        </div>
-      </div>
-      <form action="" autoComplete="off">
-        <input type="name" id="name" placeholder="Your name*" required />
-        <input type="email" id="email" placeholder="Your email*" required />
-        <input type="text" id="subject" placeholder="Subject*" required />
-        <textarea
-          name="message"
-          id="message"
-          rows="6"
-          placeholder="Your message*"
-          required
-        ></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
   )
 }
 
