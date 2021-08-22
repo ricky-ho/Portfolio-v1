@@ -3,7 +3,12 @@ import useScreenWidth from "../../hooks/useScreenWidth"
 import { Link } from "react-scroll"
 import { useInView } from "react-intersection-observer"
 import { Logo } from "../Icons"
-import { mobileThresholdWidth, navLinks, srConfig } from "../../config"
+import {
+  mobileThresholdWidth,
+  navLinks,
+  srConfig,
+  ssConfig,
+} from "../../config"
 
 import "../../styles/header.scss"
 
@@ -57,9 +62,9 @@ const DefaultNavMenu = () => {
               <li key={index}>
                 <Link
                   to={link.url}
-                  smooth={"easeOutQuad"}
-                  offset={-50}
-                  duration={500}
+                  smooth={ssConfig.smooth}
+                  offset={ssConfig.offset}
+                  duration={ssConfig.duration}
                 >
                   {link.name}
                 </Link>
@@ -100,9 +105,9 @@ const MobileNavMenu = () => {
               <li key={index}>
                 <Link
                   to={link.url}
-                  smooth={"easeOutQuad"}
-                  offset={-50}
-                  duration={500}
+                  smooth={ssConfig.smooth}
+                  offset={ssConfig.offset}
+                  duration={ssConfig.duration}
                   onClick={() => toggleMenu()}
                 >
                   {link.name}

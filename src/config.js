@@ -62,4 +62,9 @@ module.exports = {
       triggerOnce: true,
     },
   },
+  ssConfig: {
+    smooth: true,
+    offset: -25,
+    duration: 500,
+  },
 }
