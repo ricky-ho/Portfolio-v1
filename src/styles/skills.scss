@@ -9,13 +9,14 @@
 
 .skills__inner {
   @include flex(column, center, center);
-  width: 100%;
+  @include fullWidthHeight;
 
   ul {
+    @include fullWidthHeight;
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 40px;
-    width: 100%;
     place-items: center;
     text-align: center;
     list-style: none;
@@ -24,7 +25,7 @@
   li {
     @include flex(column, center, center);
     @include fullWidthHeight;
-
+    max-height: 103px;
     border-radius: 10px;
     padding: 1rem 0.75rem;
     background: hsl(0, 0%, 20%);

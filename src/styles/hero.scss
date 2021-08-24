@@ -61,10 +61,14 @@
     height: 100%;
     margin-right: clamp(15px, 2vw, 25px);
     background-color: var(--secondary);
+
+    svg {
+      background-color: var(--secondary);
+    }
   }
 
   p {
-    font-size: clamp(1rem, 3.5vw, var(--fontsize-xxl));
+    font-size: clamp(var(--fontsize-m), 4vw, var(--fontsize-xxl));
     color: var(--primary);
     text-transform: uppercase;
   }

@@ -160,12 +160,11 @@
   background-color: hsl(7, 59%, 38%);
   opacity: 0;
   z-index: 98;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-out;
 
   ul {
     @include flex(column, center, center);
     @include fullWidthHeight;
-
     list-style: none;
 
     li {

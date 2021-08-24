@@ -131,6 +131,13 @@ a {
 }
 
 /* MEDIA QUERIES */
+
+@media screen and (max-width: 350px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
 @media screen and (min-width: 500px) {
   .header__inner,
   .footer__inner,

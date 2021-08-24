@@ -25,7 +25,14 @@ const Hero = () => {
             inView ? "fadeIn" : "initialFadeIn"
           }`}
         >
-          <div></div>
+          <div>
+            <svg
+              viewBox="0 0 50 50"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+            ></svg>
+          </div>
           <p>
             I create <span>responsive</span> and <span>interactive</span> web
             applications and experiences
@@ -37,7 +44,7 @@ const Hero = () => {
             inView ? "fadeIn" : "initialFadeIn"
           }`}
         >
-          I am a <span>Front-End Developer</span> based in San Francisco,
+          <span>Front-End Software Developer</span> based in San Francisco,
           California.
         </p>
         <div
