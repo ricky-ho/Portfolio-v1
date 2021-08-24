@@ -1,6 +1,7 @@
 import React from "react"
 import { useInView } from "react-intersection-observer"
 import { srConfig } from "../../../config"
+import AboutImage from "../../../assets/svg/profile_details.svg"
 
 import "../../../styles/about.scss"
 
@@ -37,11 +38,7 @@ const About = () => {
             <p>{`I always strive to learn new things and to improve upon my existing knowledge and skillset to become an overall better web developer.`}</p>
           </div>
           <div className="about__img-wrap">
-            <img
-              className="about__img"
-              src="https://res.cloudinary.com/ricky-ho/image/upload/v1617146298/sample.jpg"
-              alt="headshot of myself"
-            />
+            <AboutImage className="about__img" />
           </div>
         </div>
       </div>
