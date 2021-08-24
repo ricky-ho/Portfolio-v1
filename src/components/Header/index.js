@@ -91,13 +91,12 @@ const MobileNavMenu = () => {
     <>
       <button
         type="button"
-        className="toggler"
+        className={`toggler ${isActive ? "toggler__active" : ""}`}
         onClick={() => toggleMenu()}
         aria-label="Toggle Menu"
-      />
-      <div className="hamburger-icon">
-        <div></div>
-      </div>
+      >
+        <span className="hamburger-icon"></span>
+      </button>
       <nav className={`menu ${isActive ? "menu__active" : ""}`}>
         <ul>
           {navLinks.map((link, index) => {
