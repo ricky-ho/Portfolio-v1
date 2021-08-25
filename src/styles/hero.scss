@@ -40,7 +40,7 @@
     font-family: var(--font-headers);
     font-size: clamp(var(--fontsize-xs), 2vw, 1rem);
     font-weight: normal;
-    color: var(--primary);
+    color: var(--gray);
     text-transform: uppercase;
 
     span {
@@ -80,7 +80,7 @@
 
 .description {
   font-size: clamp(var(--fontsize-xs), 2vw, 1rem);
-  color: var(--primary);
+  color: var(--gray);
   letter-spacing: 1px;
   text-transform: uppercase;
 

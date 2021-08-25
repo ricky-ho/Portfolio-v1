@@ -21,21 +21,12 @@ const About = () => {
         <div className="about__content">
           <div className="about-text">
             <p>
-              {`I am a Front-End Web Developer from San Francisco and a recent graduate from UCLA with a B.S. in Mathematics of Computation.
-            During my college career, I developed an interest for Computer
-            Science and acquired a solid understanding of data structures &
-            algorithms and computer organization & architecture. This formed
-            the foundation for my self-taught journey into web development post
-            graduation, in which I discovered my passion for creating responsive
-            and interactive web applications.`}
+              {`I am a recent graduate from UCLA with a B.S. in Mathematics of Computation, which is a combined mathematics & computer science major. During my college career, I gained valuable technical skills, some of which include data structures and algorithms, computer organization and architecture, and computer graphics. I also gained invaluable experience in promoting positive team dynamics and collaboration as the club president for a student-organized club. `}
             </p>
             <p>
-              {`Although I enjoy working on the client-side and utilizing good UX/UI
-            principles, I also enjoy learning about server-side programming,
-            including working with databases, ensuring applications are secure,
-            and improving overall web performance and load times.`}
+              {`As a front-end software developer, I enjoy creating responsive applications and websites with professional-looking components and designs. Although my main expertise is on the front end, I am also familiar with back-end technologies and concepts including working with databases, RESTful APIs, and user authentication.`}
             </p>
-            <p>{`I always strive to learn new things and to improve upon my existing knowledge and skillset to become an overall better web developer.`}</p>
+            <p>{`My main technology stack is MongoDB, Express, React, and Node.js. However, I am always eager to learn new web technologies and best practices to improve upon my existing skillset and become an overall better software developer.`}</p>
           </div>
           <div className="about__img-wrap">
             <AboutImage className="about__img" />

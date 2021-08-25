@@ -7,8 +7,8 @@ module.exports = {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: `Ricky Ho | Front-End Software Developer`,
-    description: `I am a front-end developer and an aspiring full-stack software developer. I enjoy creating responsive and interactive web applications and experiences.`,
+    title: `Ricky Ho - Front-End Software Developer`,
+    description: `I am a front-end software developer based in San Francisco, California. I create responsive and interactive web applications and experiences.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
