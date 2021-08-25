@@ -45,14 +45,14 @@ const Form = () => {
         response => {
           setSubmitStatus({
             status: response.status,
-            message: "Message sent successfully!",
+            message: "Message sent! Thank you for your message!",
           })
         },
         failure => {
           setSubmitStatus({
             status: failure.status,
             message:
-              "Oops, something went wrong. Feel free to send me an email instead. Sorry for the inconvenience",
+              "An error has occurred. Please try again later or feel free to email me instead. Thank you! ",
           })
         }
       )
