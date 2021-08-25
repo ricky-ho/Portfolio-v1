@@ -11,6 +11,17 @@ module.exports = {
     description: `I am a front-end software developer based in San Francisco, California. I create responsive and interactive web applications and experiences.`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-203331056-1",
+        head: true,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+        defer: false,
+        enableWebVitalsTracking: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
