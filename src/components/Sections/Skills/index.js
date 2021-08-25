@@ -18,20 +18,22 @@ const Skills = () => {
         <div className="section__header">
           <h2>Skills</h2>
         </div>
-        <ul>
-          {skills.map((skill, index) => {
-            return (
-              <li
-                key={index}
-                className={`animate ${inView ? "fadeIn" : "initialFadeIn"}`}
-                data-animation-delay={Math.floor(index / 3) + 1}
-              >
-                <p>{skill}</p>
-                <Icon name={skill} />
-              </li>
-            )
-          })}
-        </ul>
+        <div className="skills-list">
+          <ul>
+            {skills.map((skill, index) => {
+              return (
+                <li
+                  key={index}
+                  className={`animate ${inView ? "fadeIn" : "initialFadeIn"}`}
+                  data-animation-delay={Math.floor(index / 3) + 1}
+                >
+                  <p>{skill}</p>
+                  <Icon name={skill} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   )

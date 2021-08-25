@@ -10,10 +10,16 @@
 .skills__inner {
   @include flex(column, center, center);
   @include fullWidthHeight;
+}
+
+.skills-list {
+  @include fullWidthHeight;
+  display: -ms-grid;
+  display: grid;
 
   ul {
     @include fullWidthHeight;
-
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 40px;

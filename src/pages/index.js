@@ -6,8 +6,8 @@ import { Hero, About, Projects, Contact, Skills } from "../components/Sections"
 
 /* 
   TO DO:
-    - Change copywriting for About Me and Hero section
-    - Update domain restriction to EmailJS
+    - Add Portfolio as project 
+    - Order the projects
 */
 
 const IndexPage = () => {
