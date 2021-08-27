@@ -10,7 +10,7 @@ import "../../../styles/projects.scss"
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx {
+      allMdx(sort: { order: ASC, fields: frontmatter___order }) {
         edges {
           node {
             frontmatter {
@@ -80,9 +80,11 @@ const ProjectCard = ({ metadata, content }) => {
           <a href={metadata.github} target="_blank" rel="noopener noreferrer">
             <Icon name="Github" />
           </a>
-          <a href={metadata.live} target="_blank" rel="noopener noreferrer">
-            VIEW LIVE
-          </a>
+          {metadata.live && (
+            <a href={metadata.live} target="_blank" rel="noopener noreferrer">
+              VIEW LIVE
+            </a>
+          )}
         </div>
       </div>
     </div>
