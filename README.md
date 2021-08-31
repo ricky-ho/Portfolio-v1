@@ -23,7 +23,7 @@
 ## Description
 This portfolio website was created for the purpose of demonstrating my work and skills in using front-end web technologies. Gatsby was chosen over plain React for its improved page load speeds and SEO capabilities as a static-site generator. Although this portfolio could have been implemented with plain HTML, CSS, and JavaScript for the same benefits, I wanted to use this opportunity to learn and to work with new technologies.
 
-## External Dependencies
+## Dependencies
 - [gatsby-plugin-google-analytics](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/)
 - [gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/?=gatsby-plugin-mdx) - Markdown with JSX for Gatsby
   - [@mdx-js/mdx](https://www.npmjs.com/package/@mdx-js/mdx)
