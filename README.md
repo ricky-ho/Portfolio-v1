@@ -20,7 +20,7 @@
 
 ![screen capture of rickyho.dev](https://res.cloudinary.com/ricky-ho/image/upload/v1629950440/Portfolio/portfolio.png)
 
-## Purpose
+## Description
 This portfolio website was created for the purpose of demonstrating my work and skills in using front-end web technologies. Gatsby was chosen over plain React for its improved page load speeds and SEO capabilities as a static-site generator. Although this portfolio could have been implemented with plain HTML, CSS, and JavaScript for the same benefits, I wanted to use this opportunity to learn and to work with new technologies.
 
 ## External Dependencies
