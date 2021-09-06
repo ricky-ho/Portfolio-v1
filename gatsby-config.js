@@ -8,7 +8,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Ricky Ho - Front-End Software Developer`,
-    description: `I am a front-end software developer based in San Francisco, California. I create responsive and interactive web applications and experiences.`,
+    description: `Hi, I'm Ricky and I am a front-end software developer based in San Francisco, California. I create responsive and interactive web applications and experiences. `,
   },
   plugins: [
     {

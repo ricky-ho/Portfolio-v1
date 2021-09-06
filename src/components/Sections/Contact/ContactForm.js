@@ -52,7 +52,7 @@ const Form = () => {
           setSubmitStatus({
             status: failure.status,
             message:
-              "An error has occurred. Please try again later or feel free to email me instead. Thank you! ",
+              "An error has occurred. Please try again later or email me instead. Thank you and sorry for the inconvenience!",
           })
         }
       )
