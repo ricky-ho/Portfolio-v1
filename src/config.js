@@ -54,11 +54,11 @@ module.exports = {
       triggerOnce: true,
     },
     projectOptions: {
-      threshold: 0.1,
+      threshold: 0.05,
       triggerOnce: true,
     },
     defaultOptions: {
-      threshold: 0.2,
+      threshold: 0.1,
       triggerOnce: true,
     },
   },
