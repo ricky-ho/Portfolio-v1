@@ -40,6 +40,10 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: `https://res.cloudinary.com/ricky-ho/image/upload/v1629950440/Portfolio/portfolio.png`,
+        },
+        {
           property: `og:title`,
           content: title,
         },
