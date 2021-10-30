@@ -45,7 +45,7 @@ const Hero = () => {
             inView ? "fadeIn" : "initialFadeIn"
           }`}
         >
-          <span>Front-End Software Developer</span> based in San Francisco,
+          <span>Frontend Software Engineer</span> based in San Francisco,
           California.
         </p>
         <div

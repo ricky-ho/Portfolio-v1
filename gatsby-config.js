@@ -7,8 +7,8 @@ module.exports = {
     FAST_DEV: true,
   },
   siteMetadata: {
-    title: `Ricky Ho - Frontend Software Developer`,
-    description: `Hi, I'm Ricky and I am a frontend software developer based in San Francisco, California. I create responsive and interactive web applications and experiences. `,
+    title: `Ricky Ho - Frontend Software Engineer`,
+    description: `Hi, I'm Ricky and I am a frontend software engineer based in San Francisco, California. I create responsive and interactive web applications and experiences. I enjoy working with React to build visually appealing, yet simple and intuitive user interfaces.`,
   },
   plugins: [
     {
